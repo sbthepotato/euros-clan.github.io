@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euros</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/Euros.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="loading-screen">
+    </div>
+
+
+    <div id="page">
+
+        <div id="nav-bg">
+            <a href="#page">
+                <img id="top-return" src="images/euros_white.png">
+            </a>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <a id="about-link" href="#about">
+                    <li>About us</li>
+                </a>
+
+                <div id="roster-drop-container">
+                    <a href="#roster">
+                        <li id="roster-drop-button">Roster</li>
+                    </a>
+                    <div id="roster-drop-menu">
+                        <a href="#show-hide-boss">Founder</a>
+                        <a href="#show-hide-manager">Managers</a>
+                        <a href="#show-hide-member">Members</a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+
+
+        <header>
+            <div id="banner">
+                <img id="banner-img" src="images/euro_banner.jpg" width="100%">
+
+                <div id="logo">
+                    <h1 id="euros-header-text">Euros [Euro]</h1>
+                    <p>Go fast, but take your time.</p>
+                </div>
+
+                <div id="intro">
+                    <h1>Welcome Guardian!</h1>
+                    <p>Good to see you here</p>
+                    <br>
+                    <br>
+                    <a target="_blank" href="https://discord.gg/XZw6gnF">JOIN OUR DISCORD</a>
+                </div>
+            </div>
+        </header>
+
+
+
+        <main class="container">
+            <h1 id="about">About us</h1>
+            <article class="about">
+                Hey! We’re the Euros. In case you haven’t heard of us before, we are a speedrun/challenge clan growing
+                in the community. We strive to be the best we can, while teaching others along the way.
+                <br>
+                <br>
+                <strong>How it all started</strong>
+                <br>
+                <br>
+                Wami always wanted to do something “more” with PvE in Destiny. he had seen all the speedruns from clans
+                like Redeem or the solo raids from people like Slayerage. The main problem he had is that he didn’t have
+                a team to play with. Eventually he met another dutch guy while watching twitch called: “Obliviatum.”
+                That’s where it all started. He had some friends that were interested in doing challenges and speedruns
+                and we pretty much used LFG to find others like us.
+                <br>
+                <br>
+                We did our first speedrun on <a target="_blank" href="https://www.youtube.com/watch?v=rXjWzX1pLRc">Wrath
+                    of the Machine</a> and we were surprised how “well” it went and from that point we just started
+                improving ourselves.
+                <br>
+                <br>
+                When we started speedrunning we didn’t think of a name and also didn’t have a clan yet. <a
+                    target="_blank" href="https://www.speedrun.com/user/rpotts">Rpotts</a> who helped us out with
+                getting into those speedruns eventually called us Euros. More and more people were starting to do the
+                same thing cause we were the only team that had six players in Europe. We didn’t think much of it until
+                we were getting faster and faster in those speedruns and felt like we should have a name like Route and
+                Redeem to represent ourselves with. That’s where we pretty much just said “why not Euros?” And that
+                still stuck with us, even though, we picked up a lot of players from outside of the Europe.
+                <br>
+                <br>
+                At this moment we actually have more players from outside of Europe then within Europe. So the name may
+                not be as relevant anymore but it at least has a story behind it.
+                <br>
+                <br>
+                <strong>Find us:</strong>
+                <br>
+                <div class="social-links">
+                    <a target="_blank" href="https://discord.gg/XZw6gnF">
+                        <img src="images/about-us-logos/discord_logo_color.png" class="big-icon" alt="discord-logo">
+                    </a>
+                    <a target="_blank" href="https://twitter.com/Euros_Clan">
+                        <img src="images/about-us-logos/Twitter_Logo_Blue.png" class="big-icon" alt="twitter logo">
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCQOAfxngj-CfC201cxanEeg/videos">
+                        <img src="images/about-us-logos/youtube_social_icon_red.png" class="big-icon" alt="yt-logo">
+                    </a>
+                    <a target="_blank" href="https://www.bungie.net/en/ClanV2?groupid=1901299">
+                        <img src="images/about-us-logos/Shield_Crest.png" class="big-icon" alt="bungie shield">
+                    </a>
+                    <a target="_blank" href="https://steamcommunity.com/groups/Euros_Clan">
+                        <img src="images/about-us-logos/steam_logo.png" class="big-icon" alt="steam-circle">
+                    </a>
+                </div>
+            </article>
+
+
+
+            <h1 id="roster">Roster</h1>
+
+            <h2 class="col-xs-12 col-md-12 col-lg-12">Filter <span class="show-hide" id="show-hide-filter"> &#708;
+                </span>
+            </h2>
+
+            <form id="filter" action="">
+                
+                <div id="country-filter-container">
+                    <p>Country</p>
+                    <input type="checkbox" value="all" id="all">
+                    <label for="all">
+                        All
+                    </label>
+
+                    <input type="checkbox" value="australia" id="australia">
+                    <label for="australia">
+                        Australia
+                    </label>
+
+                    <input type="checkbox" value="canada" id="canada">
+                    <label for="canada">
+                        Canada
+                    </label>
+
+                    <input type="checkbox" value="denmark" id="denmark">
+                    <label for="denmark">
+                        Denmark
+                    </label>
+
+                    <input type="checkbox" value="france" id="france">
+                    <label for="france">
+                        France
+                    </label>
+
+                    <input type="checkbox" value="germany" id="germany">
+                    <label for="germany">
+                        Germany
+                    </label>
+
+                    <input type="checkbox" value="uk" id="uk">
+                    <label for="uk">
+                        United Kingdom
+                    </label>
+
+                    <input type="checkbox" value="ireland" id="ireland">
+                    <label for="ireland">
+                        Ireland
+                    </label>
+
+                    <input type="checkbox" value="norway" id="norway">
+                    <label for="norway">
+                        Norway
+                    </label>
+
+                    <input type="checkbox" value="safrica" id="safrica">
+                    <label for="safrica">
+                        South Africa
+                    </label>
+
+                    <input type="checkbox" value="sweden" id="sweden">
+                    <label for="sweden">
+                        Sweden
+                    </label>
+
+                    <input type="checkbox" value="netherlands" id="netherlands">
+                    <label for="netherlands">
+                        The Netherlands
+                    </label>
+
+                    <input type="checkbox" value="usa" id="usa">
+                    <label for="usa">
+                        United States of America
+                    </label>
+
+                    <input type="checkbox" value="wales" id="wales">
+                    <label for="wales">
+                        Wales
+                    </label>
+
+                    <input type="checkbox" value="none" id="none">
+                    <label for="none">
+                        None
+                    </label>
+                </div>
+
+                <div id="img-toggle-container">
+                    <p>Images</p>
+                    <input type="radio" name="img-toggle" value="hide-img" id="hide-img">
+                    <label for="hide-img">
+                        Hide
+                    </label>
+
+                    <input type="radio" name="img-toggle" value="show-img" id="show-img">
+                    <label for="show-img">
+                        Show
+                    </label>
+                </div>
+
+                <div id="zoom-container">
+                    <p>Zoom</p>
+                    <input type="range" min="1" max="4" value="3" id="zoom-level">
+                </div>
+
+            </form>
+
+
+
+            <h2 class="col-xs-12 col-md-12 col-lg-12">Founder <span class="show-hide" id="show-hide-boss"> &#708;
+                </span>
+            </h2>
+            <div id="founder-roster">
+
+                <article class="founder col-xs-12 col-md-12 col-lg-12 netherlands">
+                    <img class="player-bg" src="images/Roster/wami.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198087020612">
+                                Wami
+                            </a> <img class="flag icon" src="images/flags/netherlands.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/itswami"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/w1wami"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/ItsWamii"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+
+
+
+            <h2 class="col-xs-12 col-md-12 col-lg-12">Managers <span class="show-hide" id="show-hide-manager"> &#708;
+                </span>
+            </h2>
+            <div id="manager-roster">
+
+                <!-- <article class="manager col-xs-12 col-md-6 col-lg-6 norway">
+                    <img class="player-bg" src="images/Roster/chriskaizer.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/ChrisKaizer">
+                                ChrisKaizer
+                            </a> <img class="flag icon" src="images/flags/norway.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/chris_kaizer"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UChVSEMP9HCbG3Y2b7GMdcdQ"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/TTVChris_Kaizer"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article> -->
+
+                <article class="manager col-xs-12 col-md-12 col-lg-12 uk">
+                    <img class="player-bg" src="images/Roster/placeholder_hunter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Khosla <img class="flag icon" src="images/flags/uk.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/khosla03"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+
+
+            <h2 class="col-xs-12 col-md-12 col-lg-12">Members <span class="show-hide" id="show-hide-member"> &#708;
+                </span>
+            </h2>
+            <div id="member-roster">
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 australia">
+                    <img class="player-bg" src="images/Roster/asterix.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Asterix_">
+                                Asterix
+                            </a> <img class="flag icon" src="images/flags/australia.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/AsterixTTV"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCPhJ6tLP8yRmBQJ4BHr1DNg"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/AsterixTTV/"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 france">
+                    <img class="player-bg" src="images/Roster/ax6.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/ax6destiny">
+                                Ax6
+                            </a> <img class="flag icon" src="images/flags/france.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/ax6destiny">
+                                    <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCy4lUsiGUQuyhacHB-0z16A"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/Axplus"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png" class="icon"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 netherlands">
+                    <img class="player-bg" src="images/Roster/azurapenguin.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Azura Penguin <img class="flag icon"
+                                src="images/flags/netherlands.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/AzuraPenguin"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/chillfighter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Chillfigh7er <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/chillfigh7er">
+                                    <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon">
+                                </a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 canada">
+                    <img class="player-bg" src="images/Roster/crodless.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Crodless <img class="flag icon" src="images/flags/canada.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/day.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/itsday4k">
+                                Day
+                            </a> <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/itsday4k">
+                                    <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCaw_SzwJglezJSsRQYRYx1A"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 wales">
+                    <img class="player-bg" src="images/Roster/draskon.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Ceptor5665">
+                                Draskon
+                            </a> <img class="flag icon" src="images/flags/wales.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 netherlands">
+                    <img class="player-bg" src="images/Roster/edwin.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198867712558">
+                                Edwin
+                            </a> <img class="flag icon" src="images/flags/netherlands.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/mightyedwinn"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/Solaarize"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/feather.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Eonix <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/feather_xbl">
+                                    <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCah5bsz0VKCDfA-F3KwV4Bg">
+                                    <img src="images/player-card-logos/youtube_social_square_red.png" class="icon">
+                                </a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 netherlands">
+                    <img class="player-bg" src="images/Roster/placeholder_titan.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198041563467">
+                                GShark
+                            </a> <img class="flag icon" src="images/flags/netherlands.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/itsgshark"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCSp_8-o4OJoqhXTnssEYqaA"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/GShark219"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/goof.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/das_goof">
+                                Goof
+                            </a> <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCys4kINDgdaBKz_wwMkMsAQ"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/Das_Goof"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_hunter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Hitman2042 <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 germany">
+                    <img class="player-bg" src="images/Roster/h1k.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Holy1Kanobe">
+                                Holy1Kanobe
+                            </a> <img class="flag icon" src="images/flags/germany.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/holy2kanobe"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_titan.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blanl" href="https://steamcommunity.com/profiles/76561198309135361">
+                                Mario
+                            </a> <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/vsmario"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/vsmmario"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 germany">
+                    <img class="player-bg" src="images/Roster/mello.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198060795167">
+                                Mello
+                            </a> <img class="flag icon" src="images/flags/germany.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- <article class="player col-xs-12 col-md-6 col-lg-4 canada">
+                    <img class="player-bg" src="images/Roster/crodless.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Mud258 <img class="flag icon" src="images/flags/canada.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article> -->
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_warlock.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Murphsican">
+                                Murphsican
+                            </a> <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/Murphsican/"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/murphsican"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 sweden">
+                    <img class="player-bg" src="images/Roster/noviq.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198319513925">
+                                Noviq
+                            </a> <img class="flag icon" src="images/flags/sweden.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 netherlands">
+                    <img class="player-bg" src="images/Roster/placeholder_hunter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Obliviatum <img class="flag icon" src="images/flags/netherlands.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCHXzzCz_wK1sZkhipav5upQ"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_warlock.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/OuchMS">
+                                OuchMS
+                            </a> <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/ouchms"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/ouchms"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 norway">
+                    <img class="player-bg" src="images/Roster/progoat.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">ProGoat <img class="flag icon" src="images/flags/norway.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target=" _blank" href="https://www.twitch.tv/improgoat">
+                                    <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon">
+                                </a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/r0bot.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">R0b0t Aft3r A11 <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 denmark">
+                    <img class="player-bg" src="images/Roster/rambredd.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/profiles/76561198967223658">
+                                Rambredd
+                            </a> <img class="flag icon" src="images/flags/denmark.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCTaaL989hROakc11uxj7DBg"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 norway">
+                    <img class="player-bg" src="images/Roster/sbthepotato.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/sbthepotato">
+                                SBthePOTATO
+                            </a> <img class="flag icon" src="images/flags/norway.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 canada">
+                    <img class="player-bg" src="images/Roster/slash.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/thenameisslash">
+                                Slash
+                            </a> <img class="flag icon" src="images/flags/canada.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/itsslashx"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCPRxlJlppEKXnHnIOcp91Rw"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/ItsSlashX"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_hunter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">SmashingOyster <img class="flag icon" src="images/flags/usa.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/smashingoyster_"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/SmashingOyster"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 uk">
+                    <img class="player-bg" src="images/Roster/soff.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/soff50">
+                                Soff
+                            </a> <img class="flag icon" src="images/flags/uk.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/sofff"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 safrica">
+                    <img class="player-bg" src="images/Roster/solid.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Solid <img class="flag icon" src="images/flags/south_africa.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/solid_"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/craig_021"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_hunter.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Soupy <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/soupydumpling"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCTKc7hBnnE9xf1SOqhMn7aw"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/spooks.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Spooks <img class="flag icon" src="images/flags/usa.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/JetSetSpooks"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 canada">
+                    <img class="player-bg" src="images/Roster/strait.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Straittt <img class="flag icon" src="images/flags/canada.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/straittt"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCuzpblsB6nOW_3ObNF8yIsw"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/streak.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Streak <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/istreaki"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCqBhcl1W4uJNmuDdO5jx3lA"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 australia">
+                    <img class="player-bg" src="images/Roster/tenz.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/tenzionz">
+                                Tenz
+                            </a> <img class="flag icon" src="images/flags/australia.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/spark3dproductions"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/Tenzionz"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 germany">
+                    <img class="player-bg" src="images/Roster/theConvicted.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/the_convicted">
+                                TheConvicted
+                            </a> <img class="flag icon" src="images/flags/germany.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/call_me_julian"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/ClAsSiXxHD"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/placeholder_warlock.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">TheJewHimself <img class="flag icon" src="images/flags/usa.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/the_jew_himself"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCjmvXC3IR2RauMDSj-DSQqg"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/JewHimself"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 uk">
+                    <img class="player-bg" src="images/Roster/toastychip.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blanl" href="https://steamcommunity.com/id/along-the-coast">
+                                Toastychips
+                            </a> <img class="flag icon" src="images/flags/uk.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/Toastychips_"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/user/chiptastic2000"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/Toastychips"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 usa">
+                    <img class="player-bg" src="images/Roster/trwptw.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">TrwPtw <img class="flag icon" src="images/flags/usa.jpg"></h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.twitch.tv/trwptw"><img
+                                        src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCk66zz92ISNxHxCOvrtN3Fg"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/TrwPtw"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 uk">
+                    <img class="player-bg" src="images/Roster/unused.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">Unused <img class="flag icon" src="images/flags/uk.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 ireland">
+                    <img class="player-bg" src="images/Roster/will.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Will_UK">
+                                Will
+                            </a> <img class="flag icon" src="images/flags/ireland.jpg">
+                        </h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                            </li>
+                            <li>
+                                <img src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                    class="no icon">
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="player col-xs-12 col-md-6 col-lg-4 australia">
+                    <img class="player-bg" src="images/Roster/ziggy.jpg">
+                    <div class="roster-container">
+                        <h3 class="roster-title">
+                            <a target="_blank" href="https://steamcommunity.com/id/Maclardy">
+                                Ziggy
+                            </a> <img class="flag icon" src="images/flags/australia.jpg"></h3>
+                        <ul>
+                            <li>
+                                <img src="images/player-card-logos/GlitchBadge_Purple_32px.png" class="no icon">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCmdI2iRlJrQNKRkTFEqUukQ?"><img
+                                        src="images/player-card-logos/youtube_social_square_red.png" class="icon"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/Ziqqy_"><img
+                                        src="images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="icon"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+
+
+        </main>
+
+
+
+        <footer>
+            <div id="contact">
+                Made by: SBthePOTATO  
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/* GENERAL */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%; /* needed for footer */
+    min-width: 575px;
+}
+
+body {
+    margin: 0 0 150px; /* equals footer height */
+    height: 100%;
+}
+
+main {
+    overflow: auto;
+    padding-top: 75px;
+    margin: 0 auto;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+main h1, h2{
+    background: rgba(20, 20, 20, 0.8);
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+main h2{
+    font-size: 1em;
+    padding: 5px;
+    margin-top: 0px;
+}
+
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
+
+
+/* loading */
+#page{
+    display: none;
+}
+
+#loading-screen {
+    border: 16px solid rgba(221, 22, 22, 0.2);
+    border-top: 16px solid #DD2222;
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    animation: spin 2s ease-in-out infinite;
+    margin: 20% auto;  
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* header */
+header {
+    height: auto;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    z-index: 3;
+    position: relative;
+    background-image: url("images/euro_banner.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#banner-img{
+    height: 100%;
+    opacity: 0;
+}
+
+#logo {
+    display: none;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+    z-index: 5;
+}
+
+#logo h1 {
+    color: #DD2222;
+    font-weight: bold;
+    transition: color 0.5s, text-shadow 0.5s;
+}
+
+#logo h1:hover{
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #202020;
+    cursor: pointer;
+}
+
+#logo p{
+    color: #ffffff;
+    font-style: italic;
+    text-shadow: 1px 1px 2px #202020;
+}
+
+
+
+/* welcome text */
+#intro{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 7%;
+    z-index: 5;
+    text-shadow: 1px 1px 3px #202020;
+    color: #ffffff;
+}
+
+#intro h1{
+    font-size: 4em;
+    text-shadow: 1px 1px 3px #202020;
+}
+
+#intro p{
+    font-size: 1.5em;
+}
+
+#intro a{
+    border: 1px solid #DD2222;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: #DD2222;
+    text-shadow: none;
+    transition: color 0.5s, background 0.5s;
+}
+
+#intro a:hover{
+    color: #ffffff;
+    background: #DD2222;
+}
+
+
+
+/* Nav bar */
+nav {
+    position: fixed;
+    height: 50px;
+    width: 50%;
+    min-width: 350px;
+    padding: 10px;
+    padding-right: 30px;
+    margin: 0px;
+    margin-left: 48%;
+    z-index: 5;
+    text-shadow: 1px 1px 3px #202020;
+    color: #ffffff;
+}
+
+#nav-bg{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    margin: 0px;
+    z-index: 2;
+    background: rgba(20, 20, 20, 0.95);;
+    border-bottom: 2px solid #DD2222;
+}
+
+#nav-bg img{
+    width: 45px;
+    margin-left: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #DD2222;
+    padding: auto 0;
+}
+
+#nav-bg img:hover{
+    border-radius: 25%;
+}
+
+nav ul {
+    display: none;
+    margin-top: 0px;
+    padding-left: 10px;
+    float: right;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: transparent;
+    border-radius: 7px;
+    transition: color 0.5s, background 0.5s;
+}
+
+nav li:hover{
+    background: #DD2222;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover{
+   color: #ffffff;
+}
+
+
+
+/* Nav bar dropdown */
+#roster-drop-container{
+    position: relative;
+    display: inline-block;
+}
+
+#roster-drop-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    background: rgba(20, 20, 20, 0.8);;
+    border: 2px solid #DD2222;
+    border-radius: 0 0 7px 7px; 
+    border-top: none;
+    transition: color 0.5s, background 0.5s;
+}
+
+#roster-drop-menu a {
+    padding: 10px;
+    display: block;
+}
+
+#roster-drop-menu a:hover{
+    background: #DD2222;
+}
+
+@media screen and (min-device-width: 992px){
+    #roster-drop-container:hover #roster-drop-menu{
+        display: block;
+    }
+
+    #roster-drop-button:hover{
+        border-radius: 7px 7px 0 0;
+    }
+
+    #roster-drop-container:hover + #roster-drop-button{
+        background: #DD2222;
+    }
+}
+
+
+
+/* Index */
+.about{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.about a{
+    color: #DD2222;
+}
+
+.about a:hover{
+    font-style: italic;
+}
+
+.big-icon{
+    max-width: 75px;
+    max-height: 75px;
+    margin: 25px;
+}
+
+.social-links{
+    text-align: center;
+}
+
+.show-hide{
+    float: right;
+    cursor: pointer;
+    transition: 1s color;
+  
+}
+
+.show-hide:hover{
+    color: #DD2222;
+}
+
+#founder-roster, #manager-roster, #pc-roster, #xbox-roster{
+    width: 100%;
+}
+
+
+
+/* Filter box */
+#filter{
+    width: 100%;
+    color: #DD2222;
+    transition: color 2s, background 2s;
+}
+
+#filter p{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+input {
+   display: none;
+}
+  
+form{
+    text-align: center;
+}
+
+input + label {
+    padding: 5px 10px 5px;
+    margin: 5px 10px 5px 10px;
+    cursor: pointer;  
+    border: 1px solid #DD2222;
+    border-radius: 15px;
+}
+
+input:checked + label {
+    background: #DD2222;
+    color: #ffffff;
+}
+
+#img-toggle-container{
+   float: left;
+   margin-left: 15%;
+   height: 80px;
+}
+
+#zoom-container{
+   float: right;
+   margin-right: 15%;
+   height: 80px;
+}
+
+#zoom-container input{
+    margin: 14px auto 5px;
+    width: 150px;
+    padding: 5px;
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 5px;
+    background: #202020;
+    outline: none;
+    opacity: 0.25;
+}
+
+#zoom-level::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #DD2222;
+    cursor: pointer;
+  }
+  
+#zoom-level.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #DD2222;
+    cursor: pointer;
+  }
+
+
+
+/* player cards */
+.player, .founder, .manager{
+    text-align: center;
+    padding: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.player a:hover, .founder a:hover, .manager a:hover{
+    font-style: italic;
+}
+
+.roster-container{
+    position: absolute;
+    background: rgba(20, 20, 20, 0.8);
+    max-width: 300px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    height: 90px;
+}
+
+.roster-title{
+    padding-left: 0px;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    color: #ffffff;
+}
+
+.player-bg {
+    height: 400px;
+    width: 300px;
+    overflow: hidden;
+}
+
+article ul {
+    width: 100%;
+    margin-top: 0px;
+    padding-left: 0px;
+    margin: auto;
+}
+
+article li {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.icon {
+    max-width: 29px;
+    max-height: 29px;
+}
+
+.no{
+    opacity: 0;
+}
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    border-top: 5px solid #DD2222;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(20, 20, 20, 0.8);;
+}
+
+footer #contact {
+    font-size: 0.8em;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+footer #contact a {
+    color: white;
+}
+
+footer a:hover{
+    color: #DD2222
+}
