@@ -24,54 +24,56 @@ $(document).ready(function () {
 
 
     // show hide button
-    var show_hide_filter = $("span[id='show-hide-filter']");
-    var show_hide_boss = $("span[id='show-hide-boss']");
-    var show_hide_manager = $("span[id='show-hide-manager']");
-    var show_hide_member = $("span[id='show-hide-member']");
+    var show_hide_filter = $("[id='show-hide-filter']");
+    var show_hide_boss = $("[id='show-hide-boss']");
+    var show_hide_manager = $("[id='show-hide-manager']");
+    var show_hide_pc = $("[id='show-hide-pc']");
+    var show_hide_xbox = $("[id='show-hide-xbox']");
 
     // filter box
     var filter_box = $("form[id='filter']");
     var founder_roster = $("div[id='founder-roster']");
     var manager_roster = $("div[id='manager-roster']");
-    var member_roster = $("div[id='member-roster']");
+    var pc_roster = $("div[id='pc-roster']");
+    var xbox_roster = $("div[id='xbox-roster']");
 
     show_hide_filter.click(function () {
-        if (show_hide_filter.text() == "˅") {
-            show_hide_filter.text("˄");
+        if (filter_box.css('display') == 'none') {
             filter_box.slideDown();
         } else {
-            show_hide_filter.text('˅');
             filter_box.slideUp();
         }
     });
 
     show_hide_boss.click(function () {
-        if (show_hide_boss.text() == "˅") {
-            show_hide_boss.text("˄");
+        if (founder_roster.css('display') == 'none') {
             founder_roster.slideDown();
         } else {
-            show_hide_boss.text('˅');
             founder_roster.slideUp();
         }
     });
 
     show_hide_manager.click(function () {
-        if (show_hide_manager.text() == "˅") {
-            show_hide_manager.text("˄");
+        if (manager_roster.css('display') == 'none') {
             manager_roster.slideDown();
         } else {
-            show_hide_manager.text('˅');
             manager_roster.slideUp();
         }
     });
 
-    show_hide_member.click(function () {
-        if (show_hide_member.text() == "˅") {
-            show_hide_member.text("˄");
-            member_roster.slideDown();
+    show_hide_pc.click(function () {
+        if (pc_roster.css('display') == 'none') {
+            pc_roster.slideDown();
         } else {
-            show_hide_member.text('˅');
-            member_roster.slideUp();
+            pc_roster.slideUp();
+        }
+    });
+
+    show_hide_xbox.click(function () {
+        if (xbox_roster.css('display') == 'none') {
+            xbox_roster.slideDown();
+        } else {
+            xbox_roster.slideUp();
         }
     });
 
@@ -390,17 +392,14 @@ $(document).ready(function () {
     var zoom_level = $("input[type='range'][id='zoom-level']");
 
     // restore default zoom
-    zoom_level.prop('value', 3);
+    zoom_level.prop('value', 2);
 
-    var player_card = $('.player');
-    var manager_card = $('.manager');
     var founder_social_links = $(".founder").find("ul");
     var manager_social_links = $(".manager").find("ul");
     var player_social_links = $(".player").find("ul");
 
     var player_flags = $('.flag');
     var player_title = $('.roster-title')
-
 
     zoom_level.on('input', function () {
         if (this.value == 1) {
@@ -418,17 +417,7 @@ $(document).ready(function () {
 
             // puts flag on new line, centers it and gives it a bit of space from the top
             player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
-            player_title.css({ 'font-size': '17px' });
-
-            // removes old bootstrap class
-            player_card.removeClass('col-xs-6 col-md-4 col-lg-3');
-            player_card.removeClass('col-xs-12 col-md-6 col-lg-4');
-            player_card.removeClass('col-xs-12 col-md-12 col-lg-6');
-            // manager_card.removeClass('col-xs-12');
-
-            // sets bootstrap grid
-            player_card.addClass('col-xs-4 col-md-3 col-lg-2');
-            // manager_card.addClass('col-xs-6');
+            player_title.css({ 'font-size': '1.1rem' });
         } else if (this.value == 2) {
             roster_text.css({ 'max-width': '270px' });
             player_img.css({ 'width': '270px', 'height': '360px' });
@@ -441,18 +430,9 @@ $(document).ready(function () {
             // sets flag back to normal setting of being on the same line and removes the margin
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             // returns font size to normal
-            player_title.css({ 'font-size': '24px' });
+            player_title.css({ 'font-size': '1.75rem' });
             // returns height to normal
-            roster_text.css({ 'height': '90px' })
-
-            // removes class from everywhere in case of skipped step
-            player_card.removeClass('col-xs-4 col-md-3 col-lg-2');
-            player_card.removeClass('col-xs-12 col-md-6 col-lg-4');
-            player_card.removeClass('col-xs-12 col-md-12 col-lg-6');
-            // manager_card.removeClass('col-xs-12');
-
-            player_card.addClass('col-xs-6 col-md-4 col-lg-3');
-            // manager_card.addClass('col-xs-6');
+            roster_text.css({ 'height': '100px' })
         } else if (this.value == 3) {
             roster_text.css({ 'max-width': '300px' });
             player_img.css({ 'width': '300px', 'height': '400px' });
@@ -461,16 +441,8 @@ $(document).ready(function () {
             manager_social_links.css({ 'display': 'block' });
             player_social_links.css({ 'display': 'block' });
             player_flags.css({ 'display': 'inline', 'margin': '0' });
-            player_title.css({ 'font-size': '24px' });
-            roster_text.css({ 'height': '90px' })
-
-            player_card.removeClass('col-xs-4 col-md-3 col-lg-2');
-            player_card.removeClass('col-xs-6 col-md-4 col-lg-3');
-            player_card.removeClass('col-xs-12 col-md-12 col-lg-6');
-            // manager_card.removeClass('col-xs-6');
-
-            player_card.addClass('col-xs-12 col-md-6 col-lg-4')
-            // manager_card.addClass('col-xs-12');
+            player_title.css({ 'font-size': '1.75rem' });
+            roster_text.css({ 'height': '100px' })
         } else {
             roster_text.css({ 'max-width': '375px' });
             player_img.css({ 'width': '375px', 'height': '500px' });
@@ -479,18 +451,20 @@ $(document).ready(function () {
             manager_social_links.css({ 'display': 'block' });
             player_social_links.css({ 'display': 'block' });
             player_flags.css({ 'display': 'inline', 'margin': '0' });
-            player_title.css({ 'font-size': '24px' });
-            roster_text.css({ 'height': '90px' })
-
-            player_card.removeClass('col-xs-4 col-md-3 col-lg-2');
-            player_card.removeClass('col-xs-6 col-md-4 col-lg-3');
-            player_card.removeClass('col-xs-12 col-md-6 col-lg-4');
-            // manager_card.removeClass('col-xs-6');
-
-            player_card.addClass('col-xs-12 col-md-12 col-lg-6');
-            // manager_card.addClass('col-xs-12');
+            player_title.css({ 'font-size': '1.75rem' });
+            roster_text.css({ 'height': '100px' })
         }
     });
+
+
+    // sets card size based on screen width (only on load)
+    if ($(window).width() >= 2000) {
+        roster_text.css({ 'max-width': '300px' });
+        player_img.css({ 'width': '300px', 'height': '400px' });
+        zoom_level.prop('value', 3);
+    };
+
+
 
 });
 
