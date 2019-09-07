@@ -7,7 +7,6 @@
 html {
     position: relative;
     min-height: 100%; /* needed for footer */
-    min-width: 575px;
 }
 
 body {
@@ -147,23 +146,23 @@ header {
 
 @media screen and (max-width: 992px){
     #intro h1{
-        font-size: 2em;
+        font-size: 1.5rem;
         text-shadow: 1px 1px 3px #202020;
     }
     
     #intro p{
-        font-size: 1em;
+        font-size: 0.75rem;
     }
 }
 
 @media screen and (min-width: 992px){
     #intro h1{
-        font-size: 4em;
+        font-size: 4rem;
         text-shadow: 1px 1px 3px #202020;
     }  
 
     #intro p{
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 }
 
@@ -283,7 +282,7 @@ nav a:hover{
     background: #DD2222;
 }
 
-@media screen and (min-device-width: 992px){
+@media screen and (min-width: 992px){
     #roster-drop-container:hover #roster-drop-menu{
         display: block;
     }
@@ -409,8 +408,7 @@ input:checked + label {
 .player, .founder, .manager{
     text-align: center;
     padding: 1px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px 30px;
     position: relative;
 }
 
@@ -421,7 +419,7 @@ input:checked + label {
 .roster-container{
     position: absolute;
     background: rgba(20, 20, 20, 0.8);
-    max-width: 270px;
+    max-width: 300px;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -438,8 +436,8 @@ input:checked + label {
 }
 
 .player-bg {
-    height: 360px;
-    width: 270px;
+    height: 400px;
+    width: 300px;
     overflow: hidden;
 }
 

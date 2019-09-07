@@ -392,7 +392,7 @@ $(document).ready(function () {
     var zoom_level = $("input[type='range'][id='zoom-level']");
 
     // restore default zoom
-    zoom_level.prop('value', 2);
+    zoom_level.prop('value', 3);
 
     var founder_social_links = $(".founder").find("ul");
     var manager_social_links = $(".manager").find("ul");
@@ -458,10 +458,17 @@ $(document).ready(function () {
 
 
     // sets card size based on screen width (only on load)
+    if ($(window).width() <= 992) {
+        roster_text.css({ 'max-width': '270px' });
+        player_img.css({ 'width': '270px', 'height': '360px' });
+        zoom_level.prop( 'value', 2 );
+    };
+
+
     if ($(window).width() >= 2000) {
-        roster_text.css({ 'max-width': '300px' });
-        player_img.css({ 'width': '300px', 'height': '400px' });
-        zoom_level.prop('value', 3);
+        roster_text.css({ 'max-width': '375px' });
+        player_img.css({ 'width': '375px', 'height': '500px' });
+        zoom_level.prop( 'value', 4 );
     };
 
 
