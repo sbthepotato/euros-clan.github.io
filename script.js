@@ -412,9 +412,6 @@ $(document).ready(function () {
             manager_social_links.css({ 'display': 'none' });
             player_social_links.css({ 'display': 'none' });
 
-            // changes height of grey background
-            roster_text.css({ 'height': '65px' })
-
             // puts flag on new line, centers it and gives it a bit of space from the top
             player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
             player_title.css({ 'font-size': '1.1rem' });
@@ -431,8 +428,6 @@ $(document).ready(function () {
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             // returns font size to normal
             player_title.css({ 'font-size': '1.75rem' });
-            // returns height to normal
-            roster_text.css({ 'height': '100px' })
         } else if (this.value == 3) {
             roster_text.css({ 'max-width': '300px' });
             player_img.css({ 'width': '300px', 'height': '400px' });
@@ -442,7 +437,6 @@ $(document).ready(function () {
             player_social_links.css({ 'display': 'block' });
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
-            roster_text.css({ 'height': '100px' })
         } else {
             roster_text.css({ 'max-width': '375px' });
             player_img.css({ 'width': '375px', 'height': '500px' });
@@ -452,7 +446,6 @@ $(document).ready(function () {
             player_social_links.css({ 'display': 'block' });
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
-            roster_text.css({ 'height': '100px' })
         }
     });
 

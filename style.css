@@ -17,11 +17,44 @@ body {
 main {
     overflow: auto;
     padding-top: 75px;
-    margin: 0 auto;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
     height: 100%;
-    width: 100%;
 }
+
+/* @media screen and(min-width: 576px){
+    #main-page{
+        width: 95%;
+    }
+}
+
+@media screen and(min-width: 768px){
+    #main-page{
+        width: 90%;
+    }
+}
+
+@media screen and(min-width: 992px){
+    #main-page{
+        width: 80%;
+    }
+}
+
+@media screen and(min-width: 1200px){
+    #main-page{
+        width: 75%;
+    }
+}
+
+@media screen and(min-width: 1800px){
+    #main-page{
+        width: 65%;
+    }
+} */
+
+
 
 main h1, h2{
     background: rgba(20, 20, 20, 0.8);
@@ -34,7 +67,7 @@ main h1, h2{
 
 main h2{
     font-size: 1.25rem;
-    padding: 5px;
+    padding: 5px 20px;
     margin-top: 0px;
     font-weight: normal;
 }
@@ -312,10 +345,22 @@ nav a:hover{
     font-style: italic;
 }
 
+#clan-banner{
+    max-width: 25%;
+    height: auto;
+}
+
 .big-icon{
     max-width: 80px;
     max-height: 80px;
-    margin: 25px;
+    margin: 40px 40px;
+    transition: 0.5s max-width, .5s max-height, 0.5s margin;
+}
+
+.big-icon:hover{
+    max-width: 100px;
+    max-height: 100px;
+    margin: 20px 40px;
 }
 
 .social-links{
@@ -424,11 +469,10 @@ input:checked + label {
     left: 0px;
     right: 0px;
     margin: auto;
-    height: 100px;
+    height: 30%;
 }
 
 .roster-title{
-
     padding: 10px 0 5px;
     width: 100%;
     margin: auto;
