@@ -465,15 +465,6 @@ $(document).ready(function () {
     };
 
 
-    if ($(window).width() >= 2000) {
-        roster_text.css({ 'width': '375px' });
-        player_img.css({ 'width': '375px', 'height': '500px' });
-        player_icons.css({'max-width': '56px','max-height': '56px'});
-        zoom_level.prop( 'value', 4 );
-    };
-
-
-
 });
 
 
