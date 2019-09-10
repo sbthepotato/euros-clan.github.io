@@ -399,51 +399,58 @@ $(document).ready(function () {
     var player_social_links = $(".player").find("ul");
 
     var player_flags = $('.flag');
-    var player_title = $('.roster-title')
+    var player_title = $('.roster-title');
+    var player_icons = $('.icon');
+    var player_title = $('.roster-title');
 
     zoom_level.on('input', function () {
         if (this.value == 1) {
             //sets width and height for cards
-            roster_text.css({ 'max-width': '150px' });
+            roster_text.css({ 'width': '150px' });
             player_img.css({ 'width': '150px', 'height': '200px' });
+            player_icons.css({'max-width': '30px','max-height': '30px'});
 
             // removes the social links because theyre too small for this card size
-            founder_social_links.css({ 'display': 'none' });
-            manager_social_links.css({ 'display': 'none' });
-            player_social_links.css({ 'display': 'none' });
+            founder_social_links.fadeOut(100);
+            manager_social_links.fadeOut(100);
+            player_social_links.fadeOut(100);
+            player_icons.css({'max-width': '40px','max-height': '40px'});
 
             // puts flag on new line, centers it and gives it a bit of space from the top
             player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
             player_title.css({ 'font-size': '1.1rem' });
         } else if (this.value == 2) {
-            roster_text.css({ 'max-width': '270px' });
+            roster_text.css({ 'width': '270px' });
             player_img.css({ 'width': '270px', 'height': '360px' });
+            player_icons.css({'max-width': '40px','max-height': '40px'});
 
             // adds the social links back from lowest setting if they were missing
-            founder_social_links.css({ 'display': 'block' });
-            manager_social_links.css({ 'display': 'block' });
-            player_social_links.css({ 'display': 'block' });
+            founder_social_links.fadeIn();
+            manager_social_links.fadeIn();
+            player_social_links.fadeIn();
 
             // sets flag back to normal setting of being on the same line and removes the margin
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             // returns font size to normal
             player_title.css({ 'font-size': '1.75rem' });
         } else if (this.value == 3) {
-            roster_text.css({ 'max-width': '300px' });
+            roster_text.css({ 'width': '300px' });
             player_img.css({ 'width': '300px', 'height': '400px' });
+            player_icons.css({'max-width': '40px','max-height': '40px'});
 
-            founder_social_links.css({ 'display': 'block' });
-            manager_social_links.css({ 'display': 'block' });
-            player_social_links.css({ 'display': 'block' });
+            founder_social_links.fadeIn();
+            manager_social_links.fadeIn();
+            player_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
         } else {
-            roster_text.css({ 'max-width': '375px' });
+            roster_text.css({ 'width': '375px' });
             player_img.css({ 'width': '375px', 'height': '500px' });
+            player_icons.css({'max-width': '56px','max-height': '56px'});
 
-            founder_social_links.css({ 'display': 'block' });
-            manager_social_links.css({ 'display': 'block' });
-            player_social_links.css({ 'display': 'block' });
+            founder_social_links.fadeIn();
+            manager_social_links.fadeIn();
+            player_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
         }
@@ -459,8 +466,9 @@ $(document).ready(function () {
 
 
     if ($(window).width() >= 2000) {
-        roster_text.css({ 'max-width': '375px' });
+        roster_text.css({ 'width': '375px' });
         player_img.css({ 'width': '375px', 'height': '500px' });
+        player_icons.css({'max-width': '56px','max-height': '56px'});
         zoom_level.prop( 'value', 4 );
     };
 

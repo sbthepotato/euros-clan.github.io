@@ -24,37 +24,18 @@ main {
     height: 100%;
 }
 
-/* @media screen and(min-width: 576px){
-    #main-page{
-        width: 95%;
+/* Adds more widths to bootstrap container for large screens */
+@media (min-width: 1750px) {
+    .container{
+        max-width: 1300px;
     }
 }
 
-@media screen and(min-width: 768px){
-    #main-page{
-        width: 90%;
+@media (min-width: 2000px) {
+    .container{
+        max-width: 1600px;
     }
 }
-
-@media screen and(min-width: 992px){
-    #main-page{
-        width: 80%;
-    }
-}
-
-@media screen and(min-width: 1200px){
-    #main-page{
-        width: 75%;
-    }
-}
-
-@media screen and(min-width: 1800px){
-    #main-page{
-        width: 65%;
-    }
-} */
-
-
 
 main h1, h2{
     background: rgba(20, 20, 20, 0.8);
@@ -177,7 +158,7 @@ header {
     color: #ffffff;
 }
 
-@media screen and (max-width: 992px){
+@media (max-width: 992px){
     #intro h1{
         font-size: 1.5rem;
         text-shadow: 1px 1px 3px #202020;
@@ -188,7 +169,7 @@ header {
     }
 }
 
-@media screen and (min-width: 992px){
+@media (min-width: 992px){
     #intro h1{
         font-size: 4rem;
         text-shadow: 1px 1px 3px #202020;
@@ -315,7 +296,7 @@ nav a:hover{
     background: #DD2222;
 }
 
-@media screen and (min-width: 992px){
+@media (min-width: 992px){
     #roster-drop-container:hover #roster-drop-menu{
         display: block;
     }
@@ -463,9 +444,10 @@ input:checked + label {
 }
 
 .roster-container{
+    transition: 0.5s width;
     position: absolute;
     background: rgba(20, 20, 20, 0.8);
-    max-width: 300px;
+    width: 300px;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -481,6 +463,7 @@ input:checked + label {
 }
 
 .player-bg {
+    transition: 0.5s height, 0.5s width;
     height: 400px;
     width: 300px;
     overflow: hidden;
@@ -488,24 +471,23 @@ input:checked + label {
 
 article ul {
     width: 100%;
-    margin-top: 0px;
-    padding-left: 0px;
-    height: 45px;
-    line-height: 45px;
     margin: auto;
+    margin-top: 3%;
+    padding-left: 0px;
     text-align: center;
 }
 
 article li {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     vertical-align: top;
 }
 
 .icon {
-    max-width: 32px;
-    max-height: 32px;
+    transition: 0.5s max-width, 0.5s max-height;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .no{
