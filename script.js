@@ -5,10 +5,8 @@ $(document).ready(function () {
     var roster_drop_menu = $("[id='roster-drop-menu']");
 
     roster_drop_menu.hover(function () {
-        roster_drop_button.css({ 'background-color': '#dd2222' });
         roster_drop_button.css({ 'border-radius': '7px 7px 0 0' });
     }, function () {
-        roster_drop_button.css({ 'background-color': 'transparent' });
         roster_drop_button.css({ 'border-radius': '7px' });
     });
 
@@ -28,14 +26,12 @@ $(document).ready(function () {
     var show_hide_boss = $("[id='show-hide-boss']");
     var show_hide_manager = $("[id='show-hide-manager']");
     var show_hide_pc = $("[id='show-hide-pc']");
-    var show_hide_xbox = $("[id='show-hide-xbox']");
 
     // filter box
     var filter_box = $("form[id='filter']");
     var founder_roster = $("div[id='founder-roster']");
     var manager_roster = $("div[id='manager-roster']");
     var pc_roster = $("div[id='pc-roster']");
-    var xbox_roster = $("div[id='xbox-roster']");
 
     show_hide_filter.click(function () {
         if (filter_box.css('display') == 'none') {
@@ -66,14 +62,6 @@ $(document).ready(function () {
             pc_roster.slideDown();
         } else {
             pc_roster.slideUp();
-        }
-    });
-
-    show_hide_xbox.click(function () {
-        if (xbox_roster.css('display') == 'none') {
-            xbox_roster.slideDown();
-        } else {
-            xbox_roster.slideUp();
         }
     });
 
@@ -394,65 +382,69 @@ $(document).ready(function () {
     // restore default zoom
     zoom_level.prop('value', 3);
 
-    var founder_social_links = $(".founder").find("ul");
-    var manager_social_links = $(".manager").find("ul");
+    var admin_social_links = $(".admin").find("ul");
     var player_social_links = $(".player").find("ul");
 
     var player_flags = $('.flag');
     var player_title = $('.roster-title');
     var player_icons = $('.icon');
     var player_title = $('.roster-title');
+    var player_bg = $('.roster-container');
+
 
     zoom_level.on('input', function () {
         if (this.value == 1) {
             //sets width and height for cards
             roster_text.css({ 'width': '150px' });
             player_img.css({ 'width': '150px', 'height': '200px' });
-            player_icons.css({'max-width': '30px','max-height': '30px'});
+            player_icons.css({ 'max-width': '30px', 'max-height': '30px' });
 
-            // removes the social links because theyre too small for this card size
-            founder_social_links.fadeOut(100);
-            manager_social_links.fadeOut(100);
+            // removes the social links because theyre too small for this card size, also makes the flags smaller
+            admin_social_links.fadeOut(100);
             player_social_links.fadeOut(100);
-            player_icons.css({'max-width': '40px','max-height': '40px'});
+            player_icons.css({ 'max-width': '32px', 'max-height': '32px' });
 
             // puts flag on new line, centers it and gives it a bit of space from the top
             player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
-            player_title.css({ 'font-size': '1.1rem' });
+            player_title.css({ 'font-size': '1.25rem' });
+            player_bg.css({'height':'65px'});
         } else if (this.value == 2) {
             roster_text.css({ 'width': '270px' });
             player_img.css({ 'width': '270px', 'height': '360px' });
-            player_icons.css({'max-width': '40px','max-height': '40px'});
+            player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
 
             // adds the social links back from lowest setting if they were missing
-            founder_social_links.fadeIn();
-            manager_social_links.fadeIn();
+            admin_social_links.fadeOut(100);
             player_social_links.fadeIn();
 
             // sets flag back to normal setting of being on the same line and removes the margin
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             // returns font size to normal
             player_title.css({ 'font-size': '1.75rem' });
+
+            player_bg.css({'height':'110px'});
         } else if (this.value == 3) {
             roster_text.css({ 'width': '300px' });
             player_img.css({ 'width': '300px', 'height': '400px' });
-            player_icons.css({'max-width': '40px','max-height': '40px'});
+            player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
 
-            founder_social_links.fadeIn();
-            manager_social_links.fadeIn();
+            admin_social_links.fadeOut(100);
             player_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
+
+            player_bg.css({'height':'120px'});
         } else {
             roster_text.css({ 'width': '375px' });
             player_img.css({ 'width': '375px', 'height': '500px' });
-            player_icons.css({'max-width': '56px','max-height': '56px'});
+            player_icons.css({ 'max-width': '56px', 'max-height': '56px' });
 
-            founder_social_links.fadeIn();
-            manager_social_links.fadeIn();
+            admin_social_links.fadeOut(100);
             player_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
+
+            player_bg.css({'height':'150px'});
         }
     });
 
@@ -461,7 +453,7 @@ $(document).ready(function () {
     if ($(window).width() <= 992) {
         roster_text.css({ 'max-width': '270px' });
         player_img.css({ 'width': '270px', 'height': '360px' });
-        zoom_level.prop( 'value', 2 );
+        zoom_level.prop('value', 2);
     };
 
 
