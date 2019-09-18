@@ -461,12 +461,10 @@ $(document).ready(function () {
 
 
 
-$(window).on("load", function () {
-    // window on load shouldnt run until images have loaded    
+$(window).on("load", function () {  
     var loading = $("div[id='loading-screen']");
     var page = $("div[id='page']");
 
-    // slow fade in banner text elements
     var logo = $("div[id='logo']");
     var nav = $("[id='nav-list']");
     var intro = $("div[id='intro']");
