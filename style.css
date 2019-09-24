@@ -396,6 +396,7 @@ input:checked + label {
     position: relative;
     font-weight: bold;
     color: #ffffff;
+
 }
 
 .admin .roster-container{ 
@@ -413,13 +414,14 @@ input:checked + label {
 .roster-container{
     transition: 0.5s width, 0.5s height;
     position: absolute;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(210, 210, 210, 0.8);
     width: 300px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     margin: auto;
     height: 120px;
+    color: #202020;
 }
 
 .roster-title{
@@ -433,6 +435,7 @@ input:checked + label {
     height: 400px;
     width: 300px;
     overflow: hidden;
+    box-shadow: 0px 0px 4px #202020;
 }
 
 article ul {
@@ -454,6 +457,14 @@ article li {
     transition: 0.5s max-width, 0.5s max-height;
     max-width: 40px;
     max-height: 40px;
+}
+
+.flag{
+    max-width: 35px;
+    max-height: 35px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #ffffff;
+    display: inline-block;
 }
 
 .no{

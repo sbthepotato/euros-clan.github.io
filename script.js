@@ -26,7 +26,6 @@ $(document).ready(function () {
     var show_hide_boss = $("[id='show-hide-boss']");
     var show_hide_manager = $("[id='show-hide-manager']");
     var show_hide_pc = $("[id='show-hide-pc']");
-
     // filter box
     var filter_box = $("form[id='filter']");
     var founder_roster = $("div[id='founder-roster']");
@@ -71,68 +70,56 @@ $(document).ready(function () {
     var all = $("input[type='checkbox'][value='all']");
     var australia = $("input[type='checkbox'][value='australia']");
     var canada = $("input[type='checkbox'][value='canada']");
-    var denmark = $("input[type='checkbox'][value='denmark']");
     var france = $("input[type='checkbox'][value='france']");
     var germany = $("input[type='checkbox'][value='germany']");
     var uk = $("input[type='checkbox'][value='uk']");
     var ireland = $("input[type='checkbox'][value='ireland']");
     var norway = $("input[type='checkbox'][value='norway']");
     var safrica = $("input[type='checkbox'][value='safrica']");
-    var sweden = $("input[type='checkbox'][value='sweden']");
     var netherlands = $("input[type='checkbox'][value='netherlands']");
     var usa = $("input[type='checkbox'][value='usa']");
-    var wales = $("input[type='checkbox'][value='wales']");
     var none = $("input[type='checkbox'][value='none']");
 
 
     // player class variables
     var australia_card = $('.australia');
     var canada_card = $('.canada');
-    var denmark_card = $('.denmark');
     var france_card = $('.france');
     var germany_card = $('.germany');
     var uk_card = $('.uk');
     var ireland_card = $('.ireland');
     var norway_card = $('.norway');
     var safrica_card = $('.safrica');
-    var sweden_card = $('.sweden');
     var netherlands_card = $('.netherlands');
     var usa_card = $('.usa');
-    var wales_card = $('.wales');
 
 
     // on page load sets all filtering to defaults
     all.prop('checked', true);
     australia.prop('checked', true);
     canada.prop('checked', true);
-    denmark.prop('checked', true);
     france.prop('checked', true);
     germany.prop('checked', true);
     uk.prop('checked', true);
     ireland.prop('checked', true);
     norway.prop('checked', true);
     safrica.prop('checked', true);
-    sweden.prop('checked', true);
     netherlands.prop('checked', true);
     usa.prop('checked', true);
-    wales.prop('checked', true);
     none.prop('checked', false);
 
 
     // on page load sets all displays to default
     australia_card.fadeIn();
     canada_card.fadeIn();
-    denmark_card.fadeIn();
     france_card.fadeIn();
     germany_card.fadeIn();
     uk_card.fadeIn();
     ireland_card.fadeIn();
     norway_card.fadeIn();
     safrica_card.fadeIn();
-    sweden_card.fadeIn();
     netherlands_card.fadeIn();
     usa_card.fadeIn();
-    wales_card.fadeIn();
 
 
     // all checkbox
@@ -147,25 +134,20 @@ $(document).ready(function () {
             ireland.prop('checked', true);
             norway.prop('checked', true);
             safrica.prop('checked', true);
-            sweden.prop('checked', true);
             netherlands.prop('checked', true);
             usa.prop('checked', true);
-            wales.prop('checked', true);
             none.prop('checked', false);
 
             australia_card.fadeIn();
             canada_card.fadeIn();
-            denmark_card.fadeIn();
             france_card.fadeIn();
             germany_card.fadeIn();
             uk_card.fadeIn();
             ireland_card.fadeIn();
             norway_card.fadeIn();
             safrica_card.fadeIn();
-            sweden_card.fadeIn();
             netherlands_card.fadeIn();
             usa_card.fadeIn();
-            wales_card.fadeIn();
         }
     });
 
@@ -191,16 +173,6 @@ $(document).ready(function () {
         }
     });
 
-    // denmark checkbox
-    denmark.on('change', function () {
-        if (denmark.prop('checked')) {
-            none.prop('checked', false);
-            denmark_card.fadeIn();
-        } else {
-            all.prop('checked', false);
-            denmark_card.fadeOut();
-        }
-    });
 
     // france checkbox
     france.on('change', function () {
@@ -268,17 +240,6 @@ $(document).ready(function () {
         }
     });
 
-    // sweden checkbox
-    sweden.on('change', function () {
-        if (sweden.prop('checked')) {
-            none.prop('checked', false);
-            sweden_card.fadeIn();
-        } else {
-            all.prop('checked', false);
-            sweden_card.fadeOut();
-        }
-    });
-
     // netherlands checkbox
     netherlands.on('change', function () {
         if (netherlands.prop('checked')) {
@@ -301,48 +262,31 @@ $(document).ready(function () {
         }
     });
 
-    // wales checkbox
-    wales.on('change', function () {
-        if (wales.prop('checked')) {
-            none.prop('checked', false);
-            wales_card.fadeIn();
-        } else {
-            all.prop('checked', false);
-            wales_card.fadeOut();
-        }
-    });
-
     // none checkbox
     none.on('change', function () {
         if (none.prop('checked')) {
             all.prop('checked', false);
             australia.prop('checked', false);
             canada.prop('checked', false);
-            denmark.prop('checked', false);
             france.prop('checked', false);
             germany.prop('checked', false);
             uk.prop('checked', false);
             ireland.prop('checked', false);
             norway.prop('checked', false);
             safrica.prop('checked', false);
-            sweden.prop('checked', false);
             netherlands.prop('checked', false);
             usa.prop('checked', false);
-            wales.prop('checked', false);
 
             australia_card.fadeOut();
             canada_card.fadeOut();
-            denmark_card.fadeOut();
             france_card.fadeOut();
             germany_card.fadeOut();
             uk_card.fadeOut();
             ireland_card.fadeOut();
             norway_card.fadeOut();
             safrica_card.fadeOut();
-            sweden_card.fadeOut();
             netherlands_card.fadeOut();
             usa_card.fadeOut();
-            wales_card.fadeOut();
         }
     });
 
