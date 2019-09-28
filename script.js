@@ -68,7 +68,6 @@ $(document).ready(function () {
 
     // check box variables
     var all = $("input[type='checkbox'][value='all']");
-    var canada = $("input[type='checkbox'][value='canada']");
     var france = $("input[type='checkbox'][value='france']");
     var germany = $("input[type='checkbox'][value='germany']");
     var uk = $("input[type='checkbox'][value='uk']");
@@ -81,7 +80,6 @@ $(document).ready(function () {
 
 
     // player class variables
-    var canada_card = $('.canada');
     var france_card = $('.france');
     var germany_card = $('.germany');
     var uk_card = $('.uk');
@@ -94,7 +92,6 @@ $(document).ready(function () {
 
     // on page load sets all filtering to defaults
     all.prop('checked', true);
-    canada.prop('checked', true);
     france.prop('checked', true);
     germany.prop('checked', true);
     uk.prop('checked', true);
@@ -107,7 +104,6 @@ $(document).ready(function () {
 
 
     // on page load sets all displays to default
-    canada_card.fadeIn();
     france_card.fadeIn();
     germany_card.fadeIn();
     uk_card.fadeIn();
@@ -121,8 +117,6 @@ $(document).ready(function () {
     // all checkbox
     all.on('change', function () {
         if (all.prop('checked')) {
-            canada.prop('checked', true);
-            denmark.prop('checked', true);
             france.prop('checked', true);
             germany.prop('checked', true);
             uk.prop('checked', true);
@@ -133,7 +127,6 @@ $(document).ready(function () {
             usa.prop('checked', true);
             none.prop('checked', false);
 
-            canada_card.fadeIn();
             france_card.fadeIn();
             germany_card.fadeIn();
             uk_card.fadeIn();
@@ -142,17 +135,6 @@ $(document).ready(function () {
             safrica_card.fadeIn();
             netherlands_card.fadeIn();
             usa_card.fadeIn();
-        }
-    });
-
-    // canada checkbox
-    canada.on('change', function () {
-        if (canada.prop('checked')) {
-            none.prop('checked', false);
-            canada_card.fadeIn();
-        } else {
-            all.prop('checked', false);
-            canada_card.fadeOut();
         }
     });
 
@@ -248,7 +230,6 @@ $(document).ready(function () {
     none.on('change', function () {
         if (none.prop('checked')) {
             all.prop('checked', false);
-            canada.prop('checked', false);
             france.prop('checked', false);
             germany.prop('checked', false);
             uk.prop('checked', false);
@@ -258,7 +239,6 @@ $(document).ready(function () {
             netherlands.prop('checked', false);
             usa.prop('checked', false);
 
-            canada_card.fadeOut();
             france_card.fadeOut();
             germany_card.fadeOut();
             uk_card.fadeOut();
