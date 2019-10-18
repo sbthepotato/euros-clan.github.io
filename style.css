@@ -309,6 +309,12 @@ nav a:hover{
 
 
 /* Filter box */
+@media (max-width:960px){
+    #filter, #show-hide-filter{
+        display: none;
+    }
+}
+
 #filter{
     width: 100%;
     color: #bf2806;
