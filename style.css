@@ -1,7 +1,82 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 /* GENERAL */
-* {
+html {
     font-family: 'Roboto', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+         background: #222; 
+         color: #f5f5f5; 
+    }
+
+    .roster-container{
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    body {
+        background: #f5f5f5; 
+        color: #222; 
+    }
+
+    .roster-container{
+        background: rgba(245, 245, 245, 0.8);
+    }
+}
+
+@media (prefers-color-scheme: no-preference){
+    body {
+        background: #222; 
+        color: #f5f5f5; 
+   }
+
+   .roster-container{
+       background: rgba(0, 0, 0, 0.8);
+   }
+}
+
+/* Mobile and non mobile display settings*/
+@media(max-width: 992px){
+    #logo{
+        top: 25px;
+        left: 50px
+    }
+
+    #intro h1{
+        font-size: 1.5rem;
+    }
+    
+    #intro p{
+        font-size: 0.75rem;
+    }
+    
+    nav{
+        right: 10px;
+    }
+
+    #filter, #show-hide-filter{
+        display: none;
+    }
+}
+
+@media(min-width: 992px){
+    #logo{
+        top: 2%;
+        left: 20%;
+    }
+
+    #intro h1{
+        font-size: 4rem;
+    }  
+
+    #intro p{
+        font-size: 1.5rem;
+    }
+
+    nav{
+        right: 5%;
+    }
 }
 
 html {
@@ -39,7 +114,7 @@ main {
 
 main h1, h2{
     background: rgba(20, 20, 20, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
     padding: 10px;
     font-weight: bold;
     font-size: 2rem;
@@ -105,25 +180,32 @@ header {
     margin: 0px;
     padding: 0px;
     overflow: auto;
-    z-index: 3;
+    z-index: 4;
     position: relative;
-    background-image: url("images/euro_banner.jpg");
+    background: url("images/euro_banner.jpg");
     background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
+    opacity: 0.9;
 }
 
-#banner-img{
-    height: 100%;
+#header-size{
+    width: 100%;
+    padding-top: 56.25%;
     opacity: 0;
+}
+
+#header-bg{
+    background: #222;
+    width: 100%;
+    padding-top: 56.25%;
+    position: absolute;
+    z-index: 4;
 }
 
 #logo {
     display: none;
     position: absolute;
-    top: 2%;
-    left: 20%;
     z-index: 5;
 }
 
@@ -134,18 +216,16 @@ header {
 }
 
 #logo h1:hover{
-    color: #ffffff;
-    text-shadow: 1px 1px 2px #202020;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 2px #222;
     cursor: pointer;
 }
 
 #logo p{
-    color: #ffffff;
+    color: #f5f5f5;
     font-style: italic;
-    text-shadow: 1px 1px 2px #202020;
+    text-shadow: 1px 1px 2px #222;
 }
-
-
 
 /* welcome text */
 #intro{
@@ -154,30 +234,12 @@ header {
     top: 30%;
     left: 7%;
     z-index: 5;
-    text-shadow: 1px 1px 3px #202020;
-    color: #ffffff;
+    text-shadow: 1px 1px 3px #222;
+    color: #f5f5f5;
 }
 
-@media (max-width: 992px){
-    #intro h1{
-        font-size: 1.5rem;
-        text-shadow: 1px 1px 3px #202020;
-    }
-    
-    #intro p{
-        font-size: 0.75rem;
-    }
-}
-
-@media (min-width: 992px){
-    #intro h1{
-        font-size: 4rem;
-        text-shadow: 1px 1px 3px #202020;
-    }  
-
-    #intro p{
-        font-size: 1.5rem;
-    }
+#intro h1{
+    text-shadow: 1px 1px 3px #222;
 }
 
 #intro a{
@@ -190,7 +252,7 @@ header {
 }
 
 #intro a:hover{
-    color: #ffffff;
+    color: #f5f5f5;
     background: #bf2806;
 }
 
@@ -200,15 +262,13 @@ header {
 nav {
     position: fixed;
     height: 50px;
-    width: 50%;
+    width: auto;
     min-width: 350px;
     padding: 10px;
-    padding-right: 30px;
     margin: 0px;
-    margin-left: 48%;
     z-index: 5;
-    text-shadow: 1px 1px 3px #202020;
-    color: #ffffff;
+    text-shadow: 1px 1px 3px #222;
+    color: #f5f5f5;
 }
 
 #nav-bg{
@@ -217,7 +277,7 @@ nav {
     position: fixed;
     margin: 0px;
     z-index: 2;
-    background: rgba(20, 20, 20, 0.95);;
+    background: rgba(22, 22, 22, 0.95);;
     border-bottom: 2px solid #bf2806;
 }
 
@@ -226,7 +286,7 @@ nav {
     margin-left: 50px;
     cursor: pointer;
     border-radius: 50%;
-    background: #ffffff;
+    background: #f5f5f5;
     padding: auto 0;
     transition: 0.25s border-radius;
 }
@@ -258,13 +318,13 @@ nav li:hover{
 }
 
 nav a {
-    color: #ffffff;
+    color: #f5f5f5;
     font-weight: bold;
     text-decoration: none;
 }
 
 nav a:hover{
-   color: #ffffff;
+   color: #f5f5f5;
 }
 
 
@@ -309,12 +369,6 @@ nav a:hover{
 
 
 /* Filter box */
-@media (max-width:960px){
-    #filter, #show-hide-filter{
-        display: none;
-    }
-}
-
 #filter{
     width: 100%;
     color: #bf2806;
@@ -344,7 +398,7 @@ input + label {
 
 input:checked + label {
     background: #bf2806;
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 #img-toggle-container{
@@ -357,32 +411,30 @@ input:checked + label {
    height: 80px;
 }
 
-#zoom-container input{
+#zoom-level{
     display: block;
     margin: 16px auto 5px;
     width: 150px;
     padding: 5px;
     -webkit-appearance: none;
-    height: 15px;
+    height: 1px;
     border-radius: 5px;
-    background: #202020;
     outline: none;
-    opacity: 0.25;
 }
 
 #zoom-level::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: #bf2806;
     cursor: pointer;
   }
   
-#zoom-level.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+#zoom-level::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: #bf2806;
     cursor: pointer;
@@ -401,8 +453,6 @@ input:checked + label {
     margin: 15px 30px;
     position: relative;
     font-weight: bold;
-    color: #ffffff;
-
 }
 
 .admin .roster-container{ 
@@ -418,27 +468,26 @@ input:checked + label {
 }
 
 .player a:hover{
-    text-shadow: 0px 0px 2px #003399;
+    text-shadow: 0px 0px 4px #003399;
 }
 
 .admin a:hover{
-    text-shadow: 0px 0px 2px #ffcc00;
+    text-shadow: 0px 0px 4px #ffcc00;
 }
 
 .roster-container{
     transition: 0.5s width, 0.5s height;
     position: absolute;
-    background: rgba(210, 210, 210, 0.8);
     width: 300px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     margin: auto;
     height: 120px;
-    color: #202020;
 }
 
 .roster-title{
+    font-family: 'Roboto Mono', monospace;
     padding: 10px 0 5px;
     width: 100%;
     margin: auto;
@@ -450,7 +499,7 @@ input:checked + label {
     height: 400px;
     width: 300px;
     overflow: hidden;
-    box-shadow: 0px 0px 4px #202020;
+    box-shadow: 0px 0px 4px #222;
 }
 
 article ul {
@@ -478,7 +527,7 @@ article li {
     max-width: 35px;
     max-height: 35px;
     border-radius: 4px;
-    box-shadow: 0px 0px 3px #ffffff;
+    box-shadow: 0px 0px 1px #f5f5f5;
     display: inline-block;
 }
 
@@ -497,7 +546,7 @@ footer {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    background: rgba(20, 20, 20, 0.8);;
+    background: rgba(22, 22, 22, 0.8);;
 }
 
 footer #contact {

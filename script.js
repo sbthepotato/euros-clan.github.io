@@ -70,7 +70,6 @@ $(document).ready(function () {
     var all = $("input[type='checkbox'][value='all']");
     var germany = $("input[type='checkbox'][value='germany']");
     var uk = $("input[type='checkbox'][value='uk']");
-    var ireland = $("input[type='checkbox'][value='ireland']");
     var norway = $("input[type='checkbox'][value='norway']");
     var safrica = $("input[type='checkbox'][value='safrica']");
     var netherlands = $("input[type='checkbox'][value='netherlands']");
@@ -81,7 +80,6 @@ $(document).ready(function () {
     // player class variables
     var germany_card = $('.germany');
     var uk_card = $('.uk');
-    var ireland_card = $('.ireland');
     var norway_card = $('.norway');
     var safrica_card = $('.safrica');
     var netherlands_card = $('.netherlands');
@@ -92,7 +90,6 @@ $(document).ready(function () {
     all.prop('checked', true);
     germany.prop('checked', true);
     uk.prop('checked', true);
-    ireland.prop('checked', true);
     norway.prop('checked', true);
     safrica.prop('checked', true);
     netherlands.prop('checked', true);
@@ -103,7 +100,6 @@ $(document).ready(function () {
     // on page load sets all displays to default
     germany_card.fadeIn();
     uk_card.fadeIn();
-    ireland_card.fadeIn();
     norway_card.fadeIn();
     safrica_card.fadeIn();
     netherlands_card.fadeIn();
@@ -115,7 +111,6 @@ $(document).ready(function () {
         if (all.prop('checked')) {
             germany.prop('checked', true);
             uk.prop('checked', true);
-            ireland.prop('checked', true);
             norway.prop('checked', true);
             safrica.prop('checked', true);
             netherlands.prop('checked', true);
@@ -124,7 +119,6 @@ $(document).ready(function () {
 
             germany_card.fadeIn();
             uk_card.fadeIn();
-            ireland_card.fadeIn();
             norway_card.fadeIn();
             safrica_card.fadeIn();
             netherlands_card.fadeIn();
@@ -151,17 +145,6 @@ $(document).ready(function () {
         } else {
             all.prop('checked', false);
             uk_card.fadeOut();
-        }
-    });
-
-    // ireland checkbox
-    ireland.on('change', function () {
-        if (ireland.prop('checked')) {
-            none.prop('checked', false);
-            ireland_card.fadeIn();
-        } else {
-            all.prop('checked', false);
-            ireland_card.fadeOut();
         }
     });
 
@@ -215,7 +198,6 @@ $(document).ready(function () {
             all.prop('checked', false);
             germany.prop('checked', false);
             uk.prop('checked', false);
-            ireland.prop('checked', false);
             norway.prop('checked', false);
             safrica.prop('checked', false);
             netherlands.prop('checked', false);
@@ -223,7 +205,6 @@ $(document).ready(function () {
 
             germany_card.fadeOut();
             uk_card.fadeOut();
-            ireland_card.fadeOut();
             norway_card.fadeOut();
             safrica_card.fadeOut();
             netherlands_card.fadeOut();
@@ -275,8 +256,6 @@ $(document).ready(function () {
     var player_icons = $('.icon');
     var player_title = $('.roster-title');
     var player_bg = $('.roster-container');
-
-
 
     zoom_level.on('input', function () {
         if (this.value == 1) {
@@ -354,7 +333,6 @@ $(window).on("load", function () {
     var logo = $("div[id='logo']");
     var nav = $("[id='nav-list']");
     var intro = $("div[id='intro']");
-
 
     loading.fadeOut("fast", function () {
         page.fadeIn("fast", function () {
