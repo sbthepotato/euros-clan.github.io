@@ -22,6 +22,13 @@
 
 <body>
     <div id="loading-screen">
+        <div id="loading-circle"></div>
+
+        <p>
+            Warning dark mode users:
+            <br>
+            the banner image might be slightly blinding, sorry.
+        </p>
     </div>
 
 
@@ -42,16 +49,17 @@
                 <a href="#roster" id="roster-link">
                     <li>Roster</li>
                 </a>
-
             </ul>
         </nav>
 
-
+        <!-- The header image and the header background, the reason for this strange setup is that the header image has a
+        reduced opacity on darkmode but this would mean that you can see the nav bar behind it so the image needs a
+        solid colour background to not reveal anything behind it. The image also couldnt exist inside the normal
+        <header> because then I would also lower the opacity of the header text and I didnt want that. -->
+        <div id="header-img"></div>
         <div id="header-bg"></div>
+
         <header>
-            <div id="header-size"></div>
-
-
             <div id="logo">
                 <h1 id="euros-header-text">Euros [Euro]</h1>
                 <p>Go fast, but take your time.</p>
@@ -65,6 +73,7 @@
                 <a target="_blank" href="https://discord.gg/XZw6gnF">JOIN OUR DISCORD</a>
             </div>
         </header>
+
 
 
 
