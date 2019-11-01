@@ -28,10 +28,6 @@ html {
         background: rgba(0, 0, 0, 0.8);
     }
 
-    #loading-screen p{
-        display: block;
-    }
-
     #header-img{
         opacity: 0.75;
     }
@@ -45,10 +41,6 @@ html {
 
     .roster-container{
         background: rgba(0, 0, 0, 0.8);
-    }
-
-    #loading-screen p{
-        display: block;
     }
 
     #header-img{
@@ -178,8 +170,8 @@ ul{
     font-weight: bold;
     text-align: center;
     outline: 2px dashed #bf2806;
-    width: 400px;
-    margin: 30% auto;
+    width: auto;
+    margin: auto 25px;
 }
 
 #loading-circle {
