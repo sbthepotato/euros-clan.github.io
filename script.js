@@ -122,10 +122,10 @@ $(document).ready(function () {
 
     // if everything is unchecked this will recheck 'none'
     function noneChecked() {
-        if (germany.prop('checked', false) && luxembourg.prop('checked', false) &&
-            norway.prop('checked', false) && safrica.prop('checked', false) &&
-            netherlands.prop('checked', false) && uk.prop('checked', false) &&
-            usa.prop('checked', false)) {
+        if (germany.prop('checked') == false && luxembourg.prop('checked') == false &&
+            norway.prop('checked') == false && safrica.prop('checked') == false &&
+            netherlands.prop('checked') == false && uk.prop('checked') == false &&
+            usa.prop('checked') == false) {
             none.prop('checked', true);
         }
     }
