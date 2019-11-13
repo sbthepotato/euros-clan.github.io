@@ -10,16 +10,7 @@ $(document).ready(function () {
         roster_drop_button.css({ 'border-radius': '7px' });
     });
 
-
-    // reloads the page when you click on "euros"
-    // I think its fucking stupid but Wami likes it for some reason
-    var euros_text = $("[id='euros-header-text']");
-
-    $(euros_text).click(function () {
-        location.reload();
-    });
-
-
+    
 
     // show hide button
     var show_hide_filter = $("[id='show-hide-filter']");
