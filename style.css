@@ -204,13 +204,20 @@ ul{
     display: none;
 }
 
-#loading-screen p{
+#loading-screen #warning{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#loading-screen #warning p{
+    display: inline-block;
+    outline: 2px dashed #bf2806;
+    padding: 8px;
+    margin: 12px;
     color: #f5f5f5;
     font-weight: bold;
-    text-align: center;
-    outline: 2px dashed #bf2806;
-    width: auto;
-    margin: auto 25px;
 }
 
 #loading-circle {
