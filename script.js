@@ -421,7 +421,7 @@ $(window).on("load", function () {
 
     var endTime = (new Date()).getTime();
     var millisecondsLoading = endTime - startTime;
-    var seconds = millisecondsLoading / 1000;
-
-    $('#time').text(seconds)
+    var seconds = millisecondsLoading / 1000 ;
+    console.log(seconds)
+    $('#time').text(seconds+1)
 });
