@@ -73,7 +73,7 @@
         padding: 10px 15px;
     }
 
-    #filter, #show-hide-filter{
+    #filter, #show-hide-filter, .navbar, #nav-bg{
         display: none;
     }
 }
@@ -129,12 +129,12 @@
 
 html {
     position: relative;
+    min-height: 100%;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 100%;
-    position: relative;
+    margin: 0 0 150px;
 }
 
 /* Adds more widths to bootstrap container for large screens */
@@ -186,10 +186,6 @@ a{
 
 a:hover{
     text-decoration: none;
-    color: inherit;
-}
-
-a:visited{
     color: inherit;
 }
 
@@ -595,27 +591,26 @@ article .roster-container li {
 /* footer */
 footer {
     width: 100%;
-    margin: 0 auto;
-    margin-top: 150px;
-    height: 50px;
+    min-height: 48px;
     border-top: 5px solid #bf2806;
-    position: relative;
+    position: absolute;
     bottom: 0px;
     left: 0px;
+    width: 100%;
     background: rgba(22, 22, 22, 0.8);;
-}
-
-footer a {
-    font-size: 0.8em;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    transition: 0.5s color;
+    
 }
 
-footer a:hover {
+footer p {
+    font-size: 0.8em;
+    margin: 8px;
+    color: white;
+}
+.nowrap {
+    white-space: nowrap;
+}
+
+footer p a {
     color: #bf2806;
 }

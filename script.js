@@ -31,6 +31,7 @@ $(document).ready(function () {
     // check box variables
     var all = $("input[type='checkbox'][value='all']");
     var belgium = $("input[type='checkbox'][value='belgium']");
+    var france = $("input[type='checkbox'][value='france']");
     var germany = $("input[type='checkbox'][value='germany']");
     var italy = $("input[type='checkbox'][value='italy']");
     var luxembourg = $("input[type='checkbox'][value='luxembourg']");
@@ -44,6 +45,7 @@ $(document).ready(function () {
 
     // player class variables
     var belgium_card = $('.belgium');
+    var france_card = $('.france');
     var germany_card = $('.germany');
     var italy_card = $('.italy');
     var luxembourg_card = $('.luxembourg');
@@ -57,6 +59,7 @@ $(document).ready(function () {
     // on page load sets all filtering to defaults
     all.prop('checked', true);
     belgium.prop('checked', true);
+    france.prop('checked', true);
     germany.prop('checked', true);
     italy.prop('checked', true);
     luxembourg.prop('checked', true);
@@ -70,6 +73,7 @@ $(document).ready(function () {
 
     // on page load sets all displays to default
     belgium_card.fadeIn();
+    france_card.fadeIn();
     germany_card.fadeIn();
     italy_card.fadeIn();
     luxembourg_card.fadeIn();
@@ -82,22 +86,22 @@ $(document).ready(function () {
 
     // if everything is checked this will recheck 'all'
     function allChecked() {
-        if (belgium.prop('checked') && germany.prop('checked') &&
-            italy.prop('checked') && luxembourg.prop('checked') &&
-            norway.prop('checked') && safrica.prop('checked') &&
-            netherlands.prop('checked') && uk.prop('checked') &&
-            usa.prop('checked')) {
+        if (belgium.prop('checked') && france.prop('checked') &&
+            germany.prop('checked') && italy.prop('checked') &&
+            luxembourg.prop('checked') && norway.prop('checked') &&
+            safrica.prop('checked') && netherlands.prop('checked') &&
+            uk.prop('checked') && usa.prop('checked')) {
             all.prop('checked', true);
         }
     }
 
     // if everything is unchecked this will recheck 'none'
     function noneChecked() {
-        if (belgium.prop('checked') == false && germany.prop('checked') == false &&
-            italy.prop('checked') == false && luxembourg.prop('checked') == false &&
-            norway.prop('checked') == false && safrica.prop('checked') == false &&
-            netherlands.prop('checked') == false && uk.prop('checked') == false &&
-            usa.prop('checked') == false) {
+        if (belgium.prop('checked') == false && france.prop('checked') &&
+            germany.prop('checked') == false && italy.prop('checked') == false &&
+            luxembourg.prop('checked') == false && norway.prop('checked') == false &&
+            safrica.prop('checked') == false && netherlands.prop('checked') == false &&
+            uk.prop('checked') == false && usa.prop('checked') == false) {
             none.prop('checked', true);
         }
     }
@@ -105,7 +109,8 @@ $(document).ready(function () {
     // all checkbox
     all.on('change', function () {
         if (all.prop('checked')) {
-            belgium.prop('chekced', true);
+            belgium.prop('checked', true);
+            france.prop('checked', true);
             germany.prop('checked', true);
             italy.prop('checked', true);
             luxembourg.prop('checked', true);
@@ -117,6 +122,7 @@ $(document).ready(function () {
             none.prop('checked', false);
 
             belgium_card.fadeIn();
+            france_card.fadeIn();
             germany_card.fadeIn();
             italy_card.fadeIn();
             luxembourg_card.fadeIn();
@@ -136,6 +142,18 @@ $(document).ready(function () {
         } else {
             all.prop('checked', false);
             belgium_card.fadeOut();
+            noneChecked();
+        }
+    });
+
+    france.on('change', function () {
+        if (france.prop('checked')) {
+            none.prop('checked', false);
+            france_card.fadeIn();
+            allChecked();
+        } else {
+            all.prop('checked', false);
+            france_card.fadeOut();
             noneChecked();
         }
     });
@@ -248,6 +266,7 @@ $(document).ready(function () {
         if (none.prop('checked')) {
             all.prop('checked', false);
             belgium.prop('checked', false);
+            france.prop('checked', false);
             germany.prop('checked', false);
             italy.prop('checked', false);
             luxembourg.prop('checked', false);
@@ -258,6 +277,7 @@ $(document).ready(function () {
             usa.prop('checked', false);
 
             belgium_card.fadeOut();
+            france_card.fadeOut();
             germany_card.fadeOut();
             italy_card.fadeOut();
             luxembourg_card.fadeOut();
@@ -398,4 +418,10 @@ $(window).on("load", function () {
             nav.fadeIn(2000);
         });
     });
+
+    var endTime = (new Date()).getTime();
+    var millisecondsLoading = endTime - startTime;
+    var seconds = millisecondsLoading / 1000;
+
+    $('#time').text(seconds)
 });
