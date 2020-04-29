@@ -97,7 +97,7 @@ $(document).ready(function () {
 
     // if everything is unchecked this will recheck 'none'
     function noneChecked() {
-        if (belgium.prop('checked') == false && france.prop('checked') &&
+        if (belgium.prop('checked') == false && france.prop('checked') == false &&
             germany.prop('checked') == false && italy.prop('checked') == false &&
             luxembourg.prop('checked') == false && norway.prop('checked') == false &&
             safrica.prop('checked') == false && netherlands.prop('checked') == false &&
@@ -423,5 +423,5 @@ $(window).on("load", function () {
     var millisecondsLoading = endTime - startTime;
     var seconds = millisecondsLoading / 1000 ;
     console.log(seconds)
-    $('#time').text(seconds+1)
+    $('#time').text(seconds+0.5)
 });
