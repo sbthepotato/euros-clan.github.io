@@ -327,6 +327,7 @@ $(document).ready(function () {
 
     var admin_social_links = $(".admin").find("ul");
     var player_social_links = $(".player").find("ul");
+    var mve_social_links = $(".mve").find("ul");
 
     var player_flags = $('.flag');
     var player_title = $('.roster-title');
@@ -344,6 +345,7 @@ $(document).ready(function () {
             // removes the social links because theyre too small for this card size, also makes the flags smaller
             admin_social_links.fadeOut(100);
             player_social_links.fadeOut(100);
+            mve_social_links.fadeOut(100);
 
             // puts flag on new line, centers it and gives it a bit of space from the top
             player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
@@ -358,6 +360,7 @@ $(document).ready(function () {
             // adds the social links back from lowest setting if they were missing
             admin_social_links.fadeIn();
             player_social_links.fadeIn();
+            mve_social_links.fadeIn();
 
             // sets flag back to normal setting of being on the same line and removes the margin
             player_flags.css({ 'display': 'inline', 'margin': '0' });
@@ -372,6 +375,7 @@ $(document).ready(function () {
 
             admin_social_links.fadeIn();
             player_social_links.fadeIn();
+            mve_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
             player_title.css({ 'padding': '10px 0 5px' });
@@ -383,6 +387,7 @@ $(document).ready(function () {
 
             admin_social_links.fadeIn();
             player_social_links.fadeIn();
+            mve_social_links.fadeIn();
             player_flags.css({ 'display': 'inline', 'margin': '0' });
             player_title.css({ 'font-size': '1.75rem' });
             player_title.css({ 'padding': '10px 0 5px' });

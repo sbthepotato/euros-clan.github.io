@@ -491,7 +491,7 @@ input:checked + label {
     width: 100%;
 }
 
-.player, .admin{
+.player, .admin, .mve{
     text-align: center;
     padding: 1px;
     margin: 15px 30px;
@@ -507,6 +507,10 @@ input:checked + label {
     border-bottom: 6px solid #003399;
 }
 
+.mve .roster-container{
+    border-bottom: 6px solid #bf2806;
+}
+
 .player a, .admin a{
     transition: 0.5s text-shadow;
 }
@@ -517,6 +521,10 @@ input:checked + label {
 
 .admin a:hover{
     text-shadow: 0px 0px 4px #ffcc00;
+}
+
+.mve a:hover{
+    text-shadow: 0px 0px 4px #bf2806;
 }
 
 .roster-container{
