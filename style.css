@@ -595,6 +595,31 @@ article .roster-container li {
     height: 100%;
 }
 
+#legend{
+    text-align: center;
+    text-shadow: 0px 0px 2px #000000;
+}
+
+#legend div{
+    margin: 15px 30px
+}
+
+#legend-admin{
+ background-color: #ffcc00;
+
+}
+
+#legend-mve{
+    background-color: #bf2806;
+  
+}
+
+#legend-member{
+    background-color: #003399;
+    
+}
+
+
 
 /* footer */
 footer {
