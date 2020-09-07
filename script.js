@@ -334,11 +334,13 @@ $(document).ready(function () {
     var player_icons = $('.icon');
     var player_title = $('.roster-title');
     var player_bg = $('.roster-container');
+    var legend_box = $('.legend-box');
 
     zoom_level.on('input', function () {
         if (this.value == 1) {
             //sets width and height for cards
             roster_text.css({ 'width': '150px' });
+            legend_box.css({'width': '150px' });
             player_img.css({ 'width': '150px', 'height': '200px' });
             player_icons.css({ 'max-width': '30px', 'max-height': '30px' });
 
@@ -354,6 +356,7 @@ $(document).ready(function () {
             player_bg.css({ 'height': '65px' });
         } else if (this.value == 2) {
             roster_text.css({ 'width': '270px' });
+            legend_box.css({'width': '270px' });
             player_img.css({ 'width': '270px', 'height': '360px' });
             player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
 
@@ -370,6 +373,7 @@ $(document).ready(function () {
             player_bg.css({ 'height': '110px' });
         } else if (this.value == 3) {
             roster_text.css({ 'width': '300px' });
+            legend_box.css({'width': '300px' });
             player_img.css({ 'width': '300px', 'height': '400px' });
             player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
 
@@ -382,6 +386,7 @@ $(document).ready(function () {
             player_bg.css({ 'height': '120px' });
         } else {
             roster_text.css({ 'width': '375px' });
+            legend_box.css({'width': '375px' });
             player_img.css({ 'width': '375px', 'height': '500px' });
             player_icons.css({ 'max-width': '56px', 'max-height': '56px' });
 
@@ -399,6 +404,7 @@ $(document).ready(function () {
     // sets card size based on screen width (only on load)
     if ($(window).width() <= 992) {
         roster_text.css({ 'max-width': '270px' });
+        legend_box.css({'width': '270px' });
         player_img.css({ 'width': '270px', 'height': '360px' });
         zoom_level.prop('value', 2);
     };
@@ -426,7 +432,7 @@ $(window).on("load", function () {
 
     var endTime = (new Date()).getTime();
     var millisecondsLoading = endTime - startTime;
-    var seconds = millisecondsLoading / 1000 ;
+    var seconds = millisecondsLoading / 1000;
     console.log(seconds)
     $('#time').text(seconds+0.5)
 });

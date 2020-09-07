@@ -448,6 +448,7 @@ input:checked + label {
 #img-toggle-container{
    margin-left: 15%;
    height: 80px;
+   display: block;
 }
 
 #zoom-container{
@@ -474,7 +475,7 @@ input:checked + label {
     border-radius: 50%;
     background: #bf2806;
     cursor: pointer;
-  }
+}
   
 #zoom-level::-moz-range-thumb {
     width: 20px;
@@ -482,7 +483,7 @@ input:checked + label {
     border-radius: 50%;
     background: #bf2806;
     cursor: pointer;
-  }
+}
 
 
 
@@ -595,28 +596,34 @@ article .roster-container li {
     height: 100%;
 }
 
-#legend{
+
+
+/* Legend */
+#legend div{
+    margin: 15px 30px;
+    padding: 1px;
     text-align: center;
     text-shadow: 0px 0px 2px #000000;
+    font-weight: bold;
 }
 
-#legend div{
-    margin: 15px 30px
+.legend-box{
+    transition: 0.5s width, 0.5s height;
+    height: auto;
+    margin: 0;
+    display: block;
 }
 
 #legend-admin{
- background-color: #ffcc00;
-
+    background-color: #ffcc00;
 }
 
 #legend-mve{
     background-color: #bf2806;
-  
 }
 
 #legend-member{
     background-color: #003399;
-    
 }
 
 
