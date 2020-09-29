@@ -205,7 +205,6 @@ ul{
     width: 256px;
     border-radius: 50%;
     position: absolute;
-    display: block;
     margin: auto; 
     left: 0;
     right: 0;
@@ -352,13 +351,13 @@ header {
     margin-left: 50px;
     cursor: pointer;
     border-radius: 50%;
-    background: #f5f5f5;
+    background: #dd2222;
     padding: auto 0;
     transition: 0.25s border-radius;
 }
 
 #nav-bg img:hover{
-    border-radius: 25%;
+    border-radius: 24%;
 }
 
 /* Nav bar */
