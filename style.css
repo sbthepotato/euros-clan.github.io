@@ -462,9 +462,18 @@ input + label {
     border-radius: 15px;
 }
 
+label img{
+    width: 24px;
+    filter: grayscale(1);
+}
+
 input:checked + label {
     background: #dd2222;
     color: #f5f5f5;
+}
+
+input:checked + label img{
+    filter: grayscale(0.4);
 }
 
 #img-toggle-container{

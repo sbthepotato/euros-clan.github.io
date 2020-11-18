@@ -5,31 +5,32 @@ from collections import Counter
 from generator_functions import makePlayerCard
 
 # open json file
-jsonroster = open('members.json',)
+eurosjson = open('euros.json',)
 
 # convert file to dict
-rosterDB = json.load(jsonroster)
+eurosDict = json.load(eurosjson)
 
-jsonroster.close()
+eurosjson.close()
 
-# sort dict alphabetically 
-sortedroster = sorted(rosterDB.items())
+# sort dict alphabetically
+sortedRoster = sorted(eurosDict.items())
 
 roster = ""
 countrylist = []
 
 # for each member
-for i in sortedroster:
+for i in sortedRoster:
     # this is where all the info on somebody is
     data = i[1][0]
-    roster += makePlayerCard(data['name'], data['rank'], data['country'], data['twitch'], data['youtube'], data['twitter'], data['steam'], data['char1'], data['char2'], data['char3'])
+    roster += makePlayerCard(data['name'], data['rank'], data['country'], data['twitch'],
+                             data['youtube'], data['twitter'], data['steam'], data['char1'], data['char2'], data['char3'])
     countrylist.append(data['country'])
 
 basefile = open('base.html', "rt")
 
 resultfile = open("../index.html", "wt")
 
-for line in basefile: 
+for line in basefile:
     resultfile.write(line.replace('{{roster}}', roster))
 
 basefile.close()
