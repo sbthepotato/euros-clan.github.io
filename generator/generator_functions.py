@@ -66,3 +66,14 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam, char1, 
     </div>\n\
     </article>\n\n"
     return rosterCard
+
+def makeFilterBox(country):
+    print(country)
+    box = "<input type=\"checkbox\" value=\""+country+"\" id=\""+country+"\">\n\
+    <label for=\""+country+"\">\n\
+    <img src=\"images/flags/"+country+".svg\">\n\
+    </label>\n\n"
+    return box
+
+def makecheckboxes(country):
+    return print(country)
