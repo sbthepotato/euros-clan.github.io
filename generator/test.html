@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        var startTime = (new Date()).getTime();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Euros</title>
+    <link rel="shortcut icon" href="../images/Euros.ico">
+
+    <link rel="preload" href="../images/euro_banner.jpg" as="image">
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- link rel="stylesheet" href="bootstrap.min.css" -->
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- script src="jquery.min.js"></script -->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- script src="bootstrap.min.js"></script -->
+    <script src="../script.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="250">
+    <div id="loading-screen">
+        <img id="loading-logo" src="../images/blank_WhiteBG.svg"></img>
+        <div id="warning">
+            <p>
+                Warning dark mode users:
+                <br>
+                the banner image might be slightly blinding, sorry.
+            </p>
+        </div>
+    </div>
+
+
+    <div id="page">
+
+        <div id="nav-bg">
+            <a href="#page">
+                <img id="top-return" src="../images/blank_WhiteBG.svg">
+            </a>
+        </div>
+
+        <nav class="navbar justify-content-end fixed-top">
+            <ul class="">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#roster">
+                        Roster
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- The header image and the header background, the reason for this strange setup is that the header image has a
+        reduced opacity on darkmode but this would mean that you can see the nav bar behind it so the image needs a
+        solid colour background to not reveal anything behind it. The image also couldnt exist inside the normal
+        <header> because then I would also lower the opacity of the header text and I didnt want that. -->
+        <div id="header-img"></div>
+        <div id="header-bg"></div>
+
+        <header>
+            <div id="logo">
+                <h1>Euros [Euro]</h1>
+                <p>Go fast, but take your time.</p>
+            </div>
+
+            <div id="intro">
+                <h1>Welcome Guardian!</h1>
+                <p>Good to see you here</p>
+                <a target="_blank" href="https://discord.gg/RyyHfTD">JOIN OUR DISCORD</a>
+            </div>
+        </header>
+
+
+
+        <main class="container" id="main-page">
+
+            <section id="about">
+                <h1 class="row">About us</h1>
+
+                <article class="about" class="row">
+                    <img src="../images/clan_banner.png" id="clan-banner" class="float-left">
+                    Hey! We’re the Euros. In case you haven’t heard of us before, we are a speedrun/challenge clan
+                    growing in the community.
+                    We strive to be the best we can, while teaching others along the way.
+                    <br>
+                    <br>
+                    <strong>How it all started</strong>
+                    <br>
+                    <br>
+                    Wami always wanted to do something “more” with PvE in Destiny. He had seen all the speedruns from
+                    clans
+                    like Redeem or the solo raids from people like Slayerage.
+                    The main problem he had is that he didn’t have
+                    a team to play with. Eventually he met another Dutch guy while watching twitch called: “Obliviatum.”
+                    That’s where it all started. He had some friends that were interested in doing challenges and
+                    speedruns
+                    and we pretty much used LFG to find others like us.
+                    <br>
+                    <br>
+                    We did our first speedrun on <a target="_blank" href="https://www.youtube.com/watch?v=rXjWzX1pLRc">
+                        Wrath of the Machine</a> and we were surprised how “well” it went and from that point we just
+                    started improving ourselves.
+                    <br>
+                    <br>
+                    When we started speedrunning we didn’t think of a name and also didn’t have a clan yet. <a
+                        target="_blank" href="https://www.speedrun.com/user/rpotts"> Rpotts </a> who helped us out with
+                    getting into those speedruns eventually called us Euros. More and more people were starting to do
+                    the same thing cause we were the only team that had six players in Europe. We didn’t think much of
+                    it until we were getting faster and faster in those speedruns and felt like we should have a name
+                    like Route and Redeem to represent ourselves with. That’s where we pretty much just said “why not
+                    Euros?” And that still stuck with us, even though we picked up a lot of players from outside of
+                    Europe.
+                    <br>
+                    <br>
+                    To this day the clan has kept its history to have mostly EU players.
+                    <br>
+                    <br>
+                    <strong>Find us:</strong>
+                    <br>
+
+                    <div class="social-links" class="row">
+                        <a target="_blank" href="https://discord.gg/RyyHfTD">
+                            <img src="../images/about-us-logos/discord_logo_color.png" class="big-icon" alt="discord logo">
+                        </a>
+                        <a target="_blank" href="https://twitter.com/Euros_Clan">
+                            <img src="../images/about-us-logos/Twitter_Logo_Blue.png" class="big-icon" alt="twitter logo">
+                        </a>
+                        <a target="_blank" href="https://www.bungie.net/en/ClanV2?groupid=1901299">
+                            <img src="../images/about-us-logos/Shield_Crest.png" class="big-icon" alt="bungie shield logo">
+                        </a>
+                        <a target="_blank" href="https://steamcommunity.com/groups/Euros-Clan">
+                            <img src="../images/about-us-logos/steam_logo1.png" class="big-icon" alt="steam logo">
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section id="roster">
+                <h1 class="row">Roster </h1>
+
+                <h2 class="row" id="show-hide-filter">Filter </h2>
+
+                <form id="filter" action="" class="row">
+
+                    <div id="country-filter-container" class="col-12">
+                        <p>Country</p>
+                        <input type="checkbox" value="all" id="all">
+                        <label for="all">
+                            All
+                        </label>
+
+                        <input type="checkbox" value="belgium" id="belgium">
+                        <label for="belgium">
+                            Belgium
+                        </label>
+
+                        <input type="checkbox" value="france" id="france">
+                        <label for="france">
+                            France
+                        </label>
+
+                        <input type="checkbox" value="germany" id="germany">
+                        <label for="germany">
+                            Germany
+                        </label>
+
+                        <input type="checkbox" value="hungary" id="hungary">
+                        <label for="hungary">
+                            Hungary
+                        </label>
+
+                        <input type="checkbox" value="italy" id="italy">
+                        <label for="italy">
+                            Italy
+                        </label>
+
+                        <input type="checkbox" value="luxembourg" id="luxembourg">
+                        <label for="luxembourg">
+                            Luxembourg
+                        </label>
+
+                        <input type="checkbox" value="norway" id="norway">
+                        <label for="norway">
+                            Norway
+                        </label>
+
+                        <input type="checkbox" value="safrica" id="safrica">
+                        <label for="safrica">
+                            South Africa
+                        </label>
+
+                        <input type="checkbox" value="switzerland" id="switzerland">
+                        <label for="switzerland">
+                            Switzerland
+                        </label>
+
+                        <input type="checkbox" value="netherlands" id="netherlands">
+                        <label for="netherlands">
+                            The Netherlands
+                        </label>
+
+                        <input type="checkbox" value="uk" id="uk">
+                        <label for="uk">
+                            United Kingdom
+                        </label>
+
+                        <input type="checkbox" value="usa" id="usa">
+                        <label for="usa">
+                            United States of America
+                        </label>
+
+                        <input type="checkbox" value="none" id="none">
+                        <label for="none">
+                            None
+                        </label>
+                    </div>
+
+                    <div id="img-toggle-container" class="col">
+                        <p>Images</p>
+                        <input type="radio" name="img-toggle" value="hide-img" id="hide-img">
+                        <label for="hide-img">
+                            Hide
+                        </label>
+
+                        <input type="radio" name="img-toggle" value="show-img" id="show-img">
+                        <label for="show-img">
+                            Show
+                        </label>
+                    </div>
+
+                    <div id="zoom-container" class="col">
+                        <p>Zoom</p>
+                        <input type="range" min="1" max="4" id="zoom-level">
+                    </div>
+
+                </form>
+
+                <section id="pc-roster" class="row">
+
+
+                    <article class="admin uk col">
+                        <img class="player-bg " src="../images/Roster/noonie_t.jpg">
+                        <div class="roster-container">
+                            <h3 class="roster-title">
+                                <a target="_blank" href="https://steamcommunity.com/profiles/76561198007405799">
+                                    Noonie
+                                </a> <img class="flag icon" src="../images/flags/gb.svg"></h3>
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="https://www.twitch.tv/itsnoonie">
+                                        <img src="../images/player-card-logos/GlitchBadge_Purple_256px.png" class="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <img src="../images/player-card-logos/youtube_social_square_red.png" class="no icon">
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/Noonie_UK">
+                                        <img src="../images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                            class="icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="admin norway col">
+                        <div id="sbthepotato-carousel" class="carousel slide player-bg " data-ride="carousel"
+                            data-interval="10000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="../images/Roster/sbthepotato_w.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/Roster/sbthepotato_t.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/Roster/sbthepotato_h.jpg">
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#sbthepotato-carousel" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#sbthepotato-carousel" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                        <div class="roster-container">
+                            <h3 class="roster-title">
+                                <a target="_blank" href="https://steamcommunity.com/id/sbthepotato">
+                                    SBthePOTATO
+                                </a> <img class="flag icon" src="../images/flags/no.svg">
+                            </h3>
+                            <ul>
+                                <li>
+                                    <img src="../images/player-card-logos/GlitchBadge_Purple_256px.png" class="no icon">
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.youtube.com/user/SBthegreatify">
+                                        <img src="../images/player-card-logos/youtube_social_square_red.png" class="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <img src="../images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                        class="no icon">
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="admin netherlands col">
+                        <img class="player-bg " src="../images/Roster/wami_t.jpg">
+                        <div class="roster-container">
+                            <h3 class="roster-title">
+                                <a target="_blank" href="https://steamcommunity.com/profiles/76561198087020612">
+                                    Wami
+                                </a> <img class="flag icon" src="../images/flags/nl.svg">
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="https://www.twitch.tv/itswami"><img
+                                            src="../images/player-card-logos/GlitchBadge_Purple_256px.png" class="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.youtube.com/user/w1wami"><img
+                                            src="../images/player-card-logos/youtube_social_square_red.png" class="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/ItsWamii"><img
+                                            src="../images/player-card-logos/Twitter_Social_Icon_Square_Color.png"
+                                            class="icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </section>
+            </section>
+        </main>
+
+
+
+        <footer>
+            <p>
+                <span class="nowrap">
+                    Written with
+                    <a target="_blank" href="https://github.com/sbthepotato/euros-website">
+                        HTML, CSS, JS & lots of love by: SBthePOTATO </a>
+                </span>
+                &nbsp;｜&nbsp;
+                <span class="nowrap">
+                    Hosted using <a target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+                </span>
+                &nbsp;｜&nbsp;
+                <span class="nowrap">
+                    This page took <span id=time> </span> seconds to load
+                </span>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

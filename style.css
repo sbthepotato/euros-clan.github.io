@@ -514,7 +514,7 @@ input:checked + label {
     width: 100%;
 }
 
-.player, .admin, .mve{
+.member, .admin, .mve{
     text-align: center;
     padding: 1px;
     margin: 15px 30px;
@@ -526,7 +526,7 @@ input:checked + label {
     border-bottom: 6px solid #ffcc00;
 }
 
-.player .roster-container{
+.member .roster-container{
     border-bottom: 6px solid #003399;
 }
 
@@ -534,11 +534,11 @@ input:checked + label {
     border-bottom: 6px solid #dd2222;
 }
 
-.player a, .admin a{
+.member a, .admin a{
     transition: 0.5s text-shadow;
 }
 
-.player a:hover{
+.member a:hover{
     text-shadow: 0px 0px 4px #003399;
 }
 
@@ -605,7 +605,7 @@ article .roster-container li {
     display: inline-block;
 }
 
-.no{
+.hidden{
     opacity: 0;
 }
 

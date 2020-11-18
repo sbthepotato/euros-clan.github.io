@@ -1,0 +1,324 @@
+{
+    "wami": [
+        {
+            "name": "Wami",
+            "rank": "admin",
+            "country": "nl",
+            "twitch": "itswami",
+            "youtube": "user/w1wami",
+            "twitter": "ItsWamii",
+            "steam": "profiles/76561198087020612",
+            "char1": "t",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "gshark": [
+        {
+            "name": "GShark",
+            "rank": "member",
+            "country": "nl",
+            "twitch": "itsgshark",
+            "youtube": "channel/UCSp_8-o4OJoqhXTnssEYqaA",
+            "twitter": "GShark219",
+            "steam": "profiles/76561198041563467",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "solid": [
+        {
+            "name": "Solid",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "solid_",
+            "youtube": "",
+            "twitter": "Solid_28",
+            "steam": "id/Solid_94",
+            "char1": "t",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "sbthepotato": [
+        {
+            "name": "SBthePOTATO",
+            "rank": "admin",
+            "country": "no",
+            "twitch": "",
+            "youtube": "user/SBthegreatify",
+            "twitter": "",
+            "steam": "id/sbthepotato",
+            "char1": "w",
+            "char2": "t",
+            "char3": "h"
+        }
+    ],
+    "con": [
+        {
+            "name": "Con",
+            "rank": "member",
+            "country": "de",
+            "twitch": "theconvicted",
+            "youtube": "user/ClAsSiXxHD",
+            "twitter": "_TheConvicted",
+            "steam": "id/the_convicted",
+            "char1": "h",
+            "char2": "t",
+            "char3": "w"
+        }
+    ],
+    "holy1kanobe": [
+        {
+            "name": "Holy1Kanobe",
+            "rank": "member",
+            "country": "de",
+            "twitch": "holy2kanobe",
+            "youtube": "",
+            "twitter": "Holy3Kanobe",
+            "steam": "id/Holy1Kanobe",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "mario": [
+        {
+            "name": "Mario",
+            "rank": "member",
+            "country": "us",
+            "twitch": "vsmario",
+            "youtube": "user/vsmmario",
+            "twitter": "",
+            "steam": "profiles/76561198309135361",
+            "char1": "h",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "noonie": [
+        {
+            "name": "Noonie",
+            "rank": "admin",
+            "country": "gb",
+            "twitch": "itsnoonie",
+            "youtube": "",
+            "twitter": "Noonie_gb",
+            "steam": "profiles/76561198007405799",
+            "char1": "t",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "fuzed": [
+        {
+            "name": "Fuzed",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "Lnfuzed",
+            "youtube": "channel/UCnRjAdeNF2YTi1tnXvtKEVQ",
+            "twitter": "gbFuzed",
+            "steam": "id/lnfuzed",
+            "char1": "h",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "agogigi": [
+        {
+            "name": "Agogigi",
+            "rank": "member",
+            "country": "de",
+            "twitch": "agogigi",
+            "youtube": "channel/UC-YCeiYeCgGiHk-3-cIGVDA/featured",
+            "twitter": "agogigi_",
+            "steam": "id/agogigi_",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "fredthesweat": [
+        {
+            "name": "FredTheSweat",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "fredthesweat1",
+            "youtube": "channel/UCMMeLlxvaP40QgjFSi6O4gQ",
+            "twitter": "FredTheSweat",
+            "steam": "profiles/76561198295464519",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "leonis": [
+        {
+            "name": "Leonis",
+            "rank": "member",
+            "country": "it",
+            "twitch": "1leonis",
+            "youtube": "channel/UCSdEzi3j5v3TWVMAJvui3qg",
+            "twitter": "Alfa_Leonis",
+            "steam": "profiles/76561198982310806",
+            "char1": "t",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "zajh": [
+        {
+            "name": "Zajh",
+            "rank": "member",
+            "country": "be",
+            "twitch": "",
+            "youtube": "",
+            "twitter": "zajhtop",
+            "steam": "id/zajh",
+            "char1": "w",
+            "char2": "t",
+            "char3": "h"
+        }
+    ],
+    "wildrize": [
+        {
+            "name": "Wildrize",
+            "rank": "member",
+            "country": "be",
+            "twitch": "wildrize",
+            "youtube": "channel/UCDzf6h2StSdtdjgBSf6_BnQ",
+            "twitter": "wildrize",
+            "steam": "id/Wildrize",
+            "char1": "t",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "nytho986": [
+        {
+            "name": "Nytho986",
+            "rank": "member",
+            "country": "fr",
+            "twitch": "",
+            "youtube": "channel/UCTSqhQx1tqFST5JkKpaYZug",
+            "twitter": "Nytho17",
+            "steam": "profiles/76561198991353854",
+            "char1": "t",
+            "char2": "w",
+            "char3": ""
+        }
+    ],
+    "lulu038": [
+        {
+            "name": "Lulu038",
+            "rank": "member",
+            "country": "fr",
+            "twitch": "",
+            "youtube": "channel/UC4YM4SQU9eFg_3ckma35d9Q",
+            "twitter": "",
+            "steam": "profiles/76561198065880028",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "nogood": [
+        {
+            "name": "NoGood",
+            "rank": "member",
+            "country": "us",
+            "twitch": "uptonogood",
+            "youtube": "channel/UCtXd7i3efB19pQ2_jnqyQGQ",
+            "twitter": "NoGood_twitch",
+            "steam": "id/yxuxnoxgoodxxd",
+            "char1": "t",
+            "char2": "w",
+            "char3": "h"
+        }
+    ],
+    "nexalty": [
+        {
+            "name": "Nexalty",
+            "rank": "member",
+            "country": "fr",
+            "twitch": "nexalty",
+            "youtube": "channel/UCBJG08mjjFAzHSC9NNiQFcw",
+            "twitter": "Nexa_lty",
+            "steam": "id/Nexalty",
+            "char1": "w",
+            "char2": "h",
+            "char3": "t"
+        }
+    ],
+    "powlau": [
+        {
+            "name": "Powlau",
+            "rank": "member",
+            "country": "fr",
+            "twitch": "",
+            "youtube": "channel/UC8_uP9Ido9tkSdAenfxNgCw",
+            "twitter": "powlau_",
+            "steam": "id/powlau",
+            "char1": "h",
+            "char2": "w",
+            "char3": ""
+        }
+    ],
+    "corten": [
+        {
+            "name": "Corten",
+            "rank": "member",
+            "country": "hu",
+            "twitch": "",
+            "youtube": "channel/UC25JNAH9eJY5k24R3Ws8VKA",
+            "twitter": "",
+            "steam": "id/corten",
+            "char1": "w",
+            "char2": "t",
+            "char3": "h"
+        }
+    ],
+    "geoffrey": [
+        {
+            "name": "Geoffrey",
+            "rank": "member",
+            "country": "ch",
+            "twitch": "",
+            "youtube": "",
+            "twitter": "",
+            "steam": "profiles/76561198813416848",
+            "char1": "h",
+            "char2": "t",
+            "char3": "w"
+        }
+    ],
+    "slayerr": [
+        {
+            "name": "Slayerr",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "siayerr_",
+            "youtube": "",
+            "twitter": "Slayerr_gb",
+            "steam": "profiles/76561199030633962",
+            "char1": "w",
+            "char2": "",
+            "char3": ""
+        }
+    ],
+    "eternal": [
+        {
+            "name": "Eternal",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "",
+            "youtube": "",
+            "twitter": "Eternal1l",
+            "steam": "id/Eternal___",
+            "char1": "h",
+            "char2": "t",
+            "char3": "w"
+        }
+    ]
+}
