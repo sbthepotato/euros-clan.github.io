@@ -1,466 +1,406 @@
-$(document).ready(function () {
+$(document).ready(function() {
+  // show hide button
+  var show_hide_filter = $('[id=\'show-hide-filter\']');
 
-    // show hide button
-    var show_hide_filter = $("[id='show-hide-filter']");
+  // filter box
+  var filter_box = $('form[id=\'filter\']');
 
-    // filter box
-    var filter_box = $("form[id='filter']");
-
-    show_hide_filter.click(function () {
-        if (filter_box.css('display') == 'none') {
-            filter_box.slideDown();
-        } else {
-            filter_box.slideUp();
-        }
-    });
-
-
-
-    // check box variables
-    var all = $("input[type='checkbox'][value='all']");
-    var belgium = $("input[type='checkbox'][value='belgium']");
-    var france = $("input[type='checkbox'][value='france']");
-    var germany = $("input[type='checkbox'][value='germany']");
-    var hungary = $("input[type='checkbox'][value='hungary']");
-    var italy = $("input[type='checkbox'][value='italy']");
-    var luxembourg = $("input[type='checkbox'][value='luxembourg']");
-    var norway = $("input[type='checkbox'][value='norway']");
-    var safrica = $("input[type='checkbox'][value='safrica']");
-    var switzerland = $("input[type='checkbox'][value='switzerland']");
-    var netherlands = $("input[type='checkbox'][value='netherlands']");
-    var uk = $("input[type='checkbox'][value='uk']");
-    var usa = $("input[type='checkbox'][value='usa']");
-    var none = $("input[type='checkbox'][value='none']");
-
-
-    // player class variables
-    var belgium_card = $('.belgium');
-    var france_card = $('.france');
-    var germany_card = $('.germany');
-    var hungary_card = $('.hungary');
-    var italy_card = $('.italy');
-    var luxembourg_card = $('.luxembourg');
-    var norway_card = $('.norway');
-    var safrica_card = $('.safrica');
-    var switzerland_card = $('.switzerland');
-    var netherlands_card = $('.netherlands');
-    var uk_card = $('.uk');
-    var usa_card = $('.usa');
-
-
-    // on page load sets all filtering to defaults
-    all.prop('checked', true);
-    belgium.prop('checked', true);
-    france.prop('checked', true);
-    germany.prop('checked', true);
-    hungary.prop('checked', true);
-    italy.prop('checked', true);
-    luxembourg.prop('checked', true);
-    norway.prop('checked', true);
-    safrica.prop('checked', true);
-    switzerland.prop('checked', true);
-    netherlands.prop('checked', true);
-    uk.prop('checked', true);
-    usa.prop('checked', true);
-    none.prop('checked', false);
-
-
-    // on page load sets all displays to default
-    belgium_card.fadeIn();
-    france_card.fadeIn();
-    germany_card.fadeIn();
-    hungary_card.fadeIn();
-    italy_card.fadeIn();
-    luxembourg_card.fadeIn();
-    norway_card.fadeIn();
-    safrica_card.fadeIn();
-    switzerland_card.fadeIn();
-    netherlands_card.fadeIn();
-    uk_card.fadeIn();
-    usa_card.fadeIn();
-
-
-    // if everything is checked this will recheck 'all'
-    function allChecked() {
-        if (belgium.prop('checked') && france.prop('checked') &&
-            germany.prop('checked') && hungary.prop('checked')
-            && italy.prop('checked') &&
-            luxembourg.prop('checked') && norway.prop('checked') &&
-            safrica.prop('checked') && switzerland.prop('checked')
-            && netherlands.prop('checked') &&
-            uk.prop('checked') && usa.prop('checked')) {
-            all.prop('checked', true);
-        }
+  show_hide_filter.click(function() {
+    if (filter_box.css('display') == 'none') {
+      filter_box.slideDown();
+    } else {
+      filter_box.slideUp();
     }
+  });
 
-    // if everything is unchecked this will recheck 'none'
-    function noneChecked() {
-        if (belgium.prop('checked') == false && france.prop('checked') == false &&
-            germany.prop('checked') == false && hungary.prop('checked') == false
-            && italy.prop('checked') == false &&
-            luxembourg.prop('checked') == false && norway.prop('checked') == false &&
-            safrica.prop('checked') == false && switzerland.prop('checked') == false
-            && netherlands.prop('checked') == false &&
-            uk.prop('checked') == false && usa.prop('checked') == false) {
-            none.prop('checked', true);
-        }
+  // checkbox variables & set filtering to default
+  var all = $('input[type=\'checkbox\'][value=\'all\']');
+  all.prop('checked', true);
+  var none = $('input[type=\'checkbox\'][value=\'none\']');
+  none.prop('checked', false);
+  var be = $('input[type=\'checkbox\'][value=\'be\']');
+  be.prop('checked', true);
+  var ch = $('input[type=\'checkbox\'][value=\'ch\']');
+  ch.prop('checked', true);
+  var de = $('input[type=\'checkbox\'][value=\'de\']');
+  de.prop('checked', true);
+  var fr = $('input[type=\'checkbox\'][value=\'fr\']');
+  fr.prop('checked', true);
+  var gb = $('input[type=\'checkbox\'][value=\'gb\']');
+  gb.prop('checked', true);
+  var hu = $('input[type=\'checkbox\'][value=\'hu\']');
+  hu.prop('checked', true);
+  var it = $('input[type=\'checkbox\'][value=\'it\']');
+  it.prop('checked', true);
+  var nl = $('input[type=\'checkbox\'][value=\'nl\']');
+  nl.prop('checked', true);
+  var no = $('input[type=\'checkbox\'][value=\'no\']');
+  no.prop('checked', true);
+  var us = $('input[type=\'checkbox\'][value=\'us\']');
+  us.prop('checked', true);
+
+
+  // player class variables & set all card displays to on
+  var be_card = $('.be');
+  be_card.fadeIn();
+  var ch_card = $('.ch');
+  ch_card.fadeIn();
+  var de_card = $('.de');
+  de_card.fadeIn();
+  var fr_card = $('.fr');
+  fr_card.fadeIn();
+  var gb_card = $('.gb');
+  gb_card.fadeIn();
+  var hu_card = $('.hu');
+  hu_card.fadeIn();
+  var it_card = $('.it');
+  it_card.fadeIn();
+  var nl_card = $('.nl');
+  nl_card.fadeIn();
+  var no_card = $('.no');
+  no_card.fadeIn();
+  var us_card = $('.us');
+  us_card.fadeIn();
+
+
+  // if everything is checked this will recheck 'all'
+  function allChecked() {
+    if (be.prop('checked') && ch.prop('checked') && de.prop('checked') &&
+        fr.prop('checked') && gb.prop('checked') && hu.prop('checked') &&
+        it.prop('checked') && nl.prop('checked') && no.prop('checked') &&
+        us.prop('checked')) {
+      all.prop('checked', true);
     }
+  }
 
-    // all checkbox
-    all.on('change', function () {
-        if (all.prop('checked')) {
-            belgium.prop('checked', true);
-            france.prop('checked', true);
-            germany.prop('checked', true);
-            hungary.prop('checked', true);
-            italy.prop('checked', true);
-            luxembourg.prop('checked', true);
-            norway.prop('checked', true);
-            safrica.prop('checked', true);
-            switzerland.prop('checked', true);
-            netherlands.prop('checked', true);
-            uk.prop('checked', true);
-            usa.prop('checked', true);
-            none.prop('checked', false);
-
-            belgium_card.fadeIn();
-            france_card.fadeIn();
-            germany_card.fadeIn();
-            hungary_card.fadeIn();
-            italy_card.fadeIn();
-            luxembourg_card.fadeIn();
-            norway_card.fadeIn();
-            safrica_card.fadeIn();
-            switzerland_card.fadeIn();
-            netherlands_card.fadeIn();
-            uk_card.fadeIn();
-            usa_card.fadeIn();
-        }
-    });
-
-    belgium.on('change', function () {
-        if (belgium.prop('checked')) {
-            none.prop('checked', false);
-            belgium_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            belgium_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    france.on('change', function () {
-        if (france.prop('checked')) {
-            none.prop('checked', false);
-            france_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            france_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    germany.on('change', function () {
-        if (germany.prop('checked')) {
-            none.prop('checked', false);
-            germany_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            germany_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    hungary.on('change', function () {
-        if (hungary.prop('checked')) {
-            none.prop('checked', false);
-            hungary_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            hungary_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-
-    italy.on('change', function () {
-        if (italy.prop('checked')) {
-            none.prop('checked', false);
-            italy_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            italy_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    luxembourg.on('change', function () {
-        if (luxembourg.prop('checked')) {
-            none.prop('checked', false);
-            luxembourg_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            luxembourg_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    norway.on('change', function () {
-        if (norway.prop('checked')) {
-            none.prop('checked', false);
-            norway_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            norway_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    safrica.on('change', function () {
-        if (safrica.prop('checked')) {
-            none.prop('checked', false);
-            safrica_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            safrica_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    switzerland.on('change', function () {
-        if (switzerland.prop('checked')) {
-            none.prop('checked', false);
-            switzerland_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            switzerland_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    netherlands.on('change', function () {
-        if (netherlands.prop('checked')) {
-            none.prop('checked', false);
-            netherlands_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            netherlands_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    uk.on('change', function () {
-        if (uk.prop('checked')) {
-            none.prop('checked', false);
-            uk_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            uk_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    usa.on('change', function () {
-        if (usa.prop('checked')) {
-            none.prop('checked', false);
-            usa_card.fadeIn();
-            allChecked();
-        } else {
-            all.prop('checked', false);
-            usa_card.fadeOut();
-            noneChecked();
-        }
-    });
-
-    // none checkbox
-    none.on('change', function () {
-        if (none.prop('checked')) {
-            all.prop('checked', false);
-            belgium.prop('checked', false);
-            france.prop('checked', false);
-            germany.prop('checked', false);
-            hungary.prop('checked', false);
-            italy.prop('checked', false);
-            luxembourg.prop('checked', false);
-            uk.prop('checked', false);
-            norway.prop('checked', false);
-            safrica.prop('checked', false);
-            switzerland.prop('checked', false);
-            netherlands.prop('checked', false);
-            usa.prop('checked', false);
-
-            belgium_card.fadeOut();
-            france_card.fadeOut();
-            germany_card.fadeOut();
-            hungary_card.fadeOut();
-            italy_card.fadeOut();
-            luxembourg_card.fadeOut();
-            norway_card.fadeOut();
-            safrica_card.fadeOut();
-            switzerland_card.fadeOut();
-            netherlands_card.fadeOut();
-            uk_card.fadeOut();
-            usa_card.fadeOut();
-        }
-    });
-
-
-    // radio buttons
-    var hide_img = $("input[type='radio'][value='hide-img']");
-    var show_img = $("input[type='radio'][value='show-img']");
-
-    // player images and text box
-    // also used for zoom slider
-    var player_img = $('.player-bg');
-    var roster_text = $('.roster-container');
-
-    // restore defaults
-    show_img.prop('checked', true);
-
-    show_img.on('change', function () {
-        if (show_img.prop('checked')) {
-            player_img.fadeIn();
-            roster_text.css({ position: 'absolute' });
-        }
-    });
-
-    hide_img.on('change', function () {
-        if (hide_img.prop('checked')) {
-            player_img.fadeOut(function () {
-                roster_text.css({ position: 'relative' });
-            });
-        }
-    });
+  // if everything is unchecked this will recheck 'none'
+  function noneChecked() {
+    if (be.prop('checked') == false && ch.prop('checked') == false &&
+        de.prop('checked') == false && fr.prop('checked') == false &&
+        gb.prop('checked') == false && hu.prop('checked') == false &&
+        it.prop('checked') == false && nl.prop('checked') == false &&
+        no.prop('checked') == false && us.prop('checked') == false) {
+      none.prop('checked', true);
+    }
+  }
 
 
 
-    // zoom slider
-    var zoom_level = $("input[type='range'][id='zoom-level']");
+  all.on('change', function() {
+    if (all.prop('checked')) {
+      be.prop('checked', true);
+      be_card.fadeIn();
+      ch.prop('checked', true);
+      ch_card.fadeIn();
+      de.prop('checked', true);
+      de_card.fadeIn();
+      fr.prop('checked', true);
+      fr_card.fadeIn();
+      gb.prop('checked', true);
+      gb_card.fadeIn();
+      hu.prop('checked', true);
+      hu_card.fadeIn();
+      it.prop('checked', true);
+      it_card.fadeIn();
+      nl.prop('checked', true);
+      nl_card.fadeIn();
+      no.prop('checked', true);
+      no_card.fadeIn();
+      us.prop('checked', true);
+      us_card.fadeIn();
+    }
+  });
 
-    // restore default zoom
-    zoom_level.prop('value', 3);
+  none.on('change', function() {
+    if (none.prop('checked')) {
+      all.prop('checked', false);
+      be.prop('checked', false);
+      be_card.fadeOut();
+      ch.prop('checked', false);
+      ch_card.fadeOut();
+      de.prop('checked', false);
+      de_card.fadeOut();
+      fr.prop('checked', false);
+      fr_card.fadeOut();
+      gb.prop('checked', false);
+      gb_card.fadeOut();
+      hu.prop('checked', false);
+      hu_card.fadeOut();
+      it.prop('checked', false);
+      it_card.fadeOut();
+      nl.prop('checked', false);
+      nl_card.fadeOut();
+      no.prop('checked', false);
+      no_card.fadeOut();
+      us.prop('checked', false);
+      us_card.fadeOut();
+    }
+  });
 
-    var admin_social_links = $(".admin").find("ul");
-    var player_social_links = $(".player").find("ul");
-    var mve_social_links = $(".mve").find("ul");
+  be.on('change', function() {
+    if (be.prop('checked')) {
+      none.prop('checked', false);
+      be_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      be_card.fadeOut();
+      noneChecked();
+    }
+  });
+  ch.on('change', function() {
+    if (ch.prop('checked')) {
+      none.prop('checked', false);
+      ch_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      ch_card.fadeOut();
+      noneChecked();
+    }
+  });
+  de.on('change', function() {
+    if (de.prop('checked')) {
+      none.prop('checked', false);
+      de_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      de_card.fadeOut();
+      noneChecked();
+    }
+  });
+  fr.on('change', function() {
+    if (fr.prop('checked')) {
+      none.prop('checked', false);
+      fr_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      fr_card.fadeOut();
+      noneChecked();
+    }
+  });
+  gb.on('change', function() {
+    if (gb.prop('checked')) {
+      none.prop('checked', false);
+      gb_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      gb_card.fadeOut();
+      noneChecked();
+    }
+  });
+  hu.on('change', function() {
+    if (hu.prop('checked')) {
+      none.prop('checked', false);
+      hu_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      hu_card.fadeOut();
+      noneChecked();
+    }
+  });
+  it.on('change', function() {
+    if (it.prop('checked')) {
+      none.prop('checked', false);
+      it_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      it_card.fadeOut();
+      noneChecked();
+    }
+  });
+  nl.on('change', function() {
+    if (nl.prop('checked')) {
+      none.prop('checked', false);
+      nl_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      nl_card.fadeOut();
+      noneChecked();
+    }
+  });
+  no.on('change', function() {
+    if (no.prop('checked')) {
+      none.prop('checked', false);
+      no_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      no_card.fadeOut();
+      noneChecked();
+    }
+  });
+  us.on('change', function() {
+    if (us.prop('checked')) {
+      none.prop('checked', false);
+      us_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      us_card.fadeOut();
+      noneChecked();
+    }
+  });
 
-    var player_flags = $('.flag');
-    var player_title = $('.roster-title');
-    var player_icons = $('.icon');
-    var player_title = $('.roster-title');
-    var player_bg = $('.roster-container');
-    var legend_box = $('.legend-box');
 
-    zoom_level.on('input', function () {
-        if (this.value == 1) {
-            // removes the social links because theyre too small for this card size, also makes the flags smaller
-            admin_social_links.fadeOut(100);
-            player_social_links.fadeOut(100, function () {
-                //sets width and height for cards
-                roster_text.css({ 'width': '150px' });
-                legend_box.css({ 'width': '150px' });
-                player_img.css({ 'width': '150px', 'height': '200px' });
-                player_icons.css({ 'max-width': '30px', 'max-height': '30px' });
+  // radio buttons
+  var hide_img = $('input[type=\'radio\'][value=\'hide-img\']');
+  var show_img = $('input[type=\'radio\'][value=\'show-img\']');
 
-                // puts flag on new line, centers it and gives it a bit of space from the top
-                player_flags.css({ 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '2px' });
-                player_title.css({ 'font-size': '1.25rem' });
-                player_title.css({ 'padding': '5px 0 5px' });
-                player_bg.css({ 'height': '65px' });
-            });
-            mve_social_links.fadeOut(100);
+  // player images and text box
+  // also used for zoom slider
+  var player_img = $('.player-bg');
+  var roster_text = $('.roster-container');
 
+  // restore defaults
+  show_img.prop('checked', true);
 
-        } else if (this.value == 2) {
-            // adds the social links back from lowest setting if they were missing
-            roster_text.css({ 'width': '270px' });
-            legend_box.css({ 'width': '270px' });
-            player_img.css({ 'width': '270px', 'height': '360px' });
-            player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
+  show_img.on('change', function() {
+    if (show_img.prop('checked')) {
+      player_img.fadeIn();
+      roster_text.css({position: 'absolute'});
+    }
+  });
 
-            // adds the social links back from lowest setting if they were missing
-            admin_social_links.fadeIn();
-            player_social_links.fadeIn();
-            mve_social_links.fadeIn();
-
-            // sets flag back to normal setting of being on the same line and removes the margin
-            player_flags.css({ 'display': 'inline', 'margin': '0' });
-            // returns font size to normal
-            player_title.css({ 'font-size': '1.75rem' });
-            player_title.css({ 'padding': '10px 0 5px' });
-            player_bg.css({ 'height': '110px' });
-        } else if (this.value == 3) {
-            roster_text.css({ 'width': '300px' });
-            legend_box.css({ 'width': '300px' });
-            player_img.css({ 'width': '300px', 'height': '400px' });
-            player_icons.css({ 'max-width': '40px', 'max-height': '40px' });
-
-            admin_social_links.fadeIn();
-            player_social_links.fadeIn();
-            mve_social_links.fadeIn();
-
-            player_flags.css({ 'display': 'inline', 'margin': '0' });
-            player_title.css({ 'font-size': '1.75rem' });
-            player_title.css({ 'padding': '10px 0 5px' });
-            player_bg.css({ 'height': '120px' });
-        } else {
-            roster_text.css({ 'width': '375px' });
-            legend_box.css({ 'width': '375px' });
-            player_img.css({ 'width': '375px', 'height': '500px' });
-            player_icons.css({ 'max-width': '56px', 'max-height': '56px' });
-
-            admin_social_links.fadeIn();
-            player_social_links.fadeIn();
-            mve_social_links.fadeIn();
-
-            player_flags.css({ 'display': 'inline', 'margin': '0' });
-            player_title.css({ 'font-size': '1.75rem' });
-            player_title.css({ 'padding': '10px 0 5px' });
-            player_bg.css({ 'height': '150px' });
-        }
-    });
+  hide_img.on('change', function() {
+    if (hide_img.prop('checked')) {
+      player_img.fadeOut(function() {
+        roster_text.css({position: 'relative'});
+      });
+    }
+  });
 
 
-    // sets card size based on screen width (only on load)
-    if ($(window).width() <= 992) {
-        roster_text.css({ 'max-width': '270px' });
-        legend_box.css({ 'width': '270px' });
-        player_img.css({ 'width': '270px', 'height': '360px' });
-        zoom_level.prop('value', 2);
-    };
+
+  // zoom slider
+  var zoom_level = $('input[type=\'range\'][id=\'zoom-level\']');
+
+  // restore default zoom
+  zoom_level.prop('value', 3);
+
+  var admin_social_links = $('.admin').find('ul');
+  var player_social_links = $('.player').find('ul');
+  var mve_social_links = $('.mve').find('ul');
+
+  var player_flags = $('.flag');
+  var player_title = $('.roster-title');
+  var player_icons = $('.icon');
+  var player_title = $('.roster-title');
+  var player_bg = $('.roster-container');
+  var legend_box = $('.legend-box');
+
+  zoom_level.on('input', function() {
+    if (this.value == 1) {
+      // removes the social links because theyre too small for this card size,
+      // also makes the flags smaller
+      admin_social_links.fadeOut(100);
+      player_social_links.fadeOut(100, function() {
+        // sets width and height for cards
+        roster_text.css({'width': '150px'});
+        legend_box.css({'width': '150px'});
+        player_img.css({'width': '150px', 'height': '200px'});
+        player_icons.css({'max-width': '30px', 'max-height': '30px'});
+
+        // puts flag on new line, centers it and gives it a bit of space from
+        // the top
+        player_flags.css({
+          'display': 'block',
+          'margin-left': 'auto',
+          'margin-right': 'auto',
+          'margin-top': '2px'
+        });
+        player_title.css({'font-size': '1.25rem'});
+        player_title.css({'padding': '5px 0 5px'});
+        player_bg.css({'height': '65px'});
+      });
+      mve_social_links.fadeOut(100);
 
 
+    } else if (this.value == 2) {
+      // adds the social links back from lowest setting if they were missing
+      roster_text.css({'width': '270px'});
+      legend_box.css({'width': '270px'});
+      player_img.css({'width': '270px', 'height': '360px'});
+      player_icons.css({'max-width': '40px', 'max-height': '40px'});
+
+      // adds the social links back from lowest setting if they were missing
+      admin_social_links.fadeIn();
+      player_social_links.fadeIn();
+      mve_social_links.fadeIn();
+
+      // sets flag back to normal setting of being on the same line and removes
+      // the margin
+      player_flags.css({'display': 'inline', 'margin': '0'});
+      // returns font size to normal
+      player_title.css({'font-size': '1.75rem'});
+      player_title.css({'padding': '10px 0 5px'});
+      player_bg.css({'height': '110px'});
+    } else if (this.value == 3) {
+      roster_text.css({'width': '300px'});
+      legend_box.css({'width': '300px'});
+      player_img.css({'width': '300px', 'height': '400px'});
+      player_icons.css({'max-width': '40px', 'max-height': '40px'});
+
+      admin_social_links.fadeIn();
+      player_social_links.fadeIn();
+      mve_social_links.fadeIn();
+
+      player_flags.css({'display': 'inline', 'margin': '0'});
+      player_title.css({'font-size': '1.75rem'});
+      player_title.css({'padding': '10px 0 5px'});
+      player_bg.css({'height': '120px'});
+    } else {
+      roster_text.css({'width': '375px'});
+      legend_box.css({'width': '375px'});
+      player_img.css({'width': '375px', 'height': '500px'});
+      player_icons.css({'max-width': '56px', 'max-height': '56px'});
+
+      admin_social_links.fadeIn();
+      player_social_links.fadeIn();
+      mve_social_links.fadeIn();
+
+      player_flags.css({'display': 'inline', 'margin': '0'});
+      player_title.css({'font-size': '1.75rem'});
+      player_title.css({'padding': '10px 0 5px'});
+      player_bg.css({'height': '150px'});
+    }
+  });
+
+
+  // sets card size based on screen width (only on load)
+  if ($(window).width() <= 992) {
+    roster_text.css({'max-width': '270px'});
+    legend_box.css({'width': '270px'});
+    player_img.css({'width': '270px', 'height': '360px'});
+    zoom_level.prop('value', 2);
+  };
 });
 
 
 
-$(window).on("load", function () {
-    var loading = $("div[id='loading-screen']");
-    var page = $("div[id='page']");
+$(window).on('load', function() {
+  var loading = $('div[id=\'loading-screen\']');
+  var page = $('div[id=\'page\']');
 
-    var logo = $("div[id='logo']");
-    var nav = $("[id='nav-list']");
-    var intro = $("div[id='intro']");
+  var logo = $('div[id=\'logo\']');
+  var nav = $('[id=\'nav-list\']');
+  var intro = $('div[id=\'intro\']');
 
-    loading.fadeOut("fast", function () {
-        page.fadeIn("fast", function () {
-            logo.fadeIn(2000);
-            intro.fadeIn(2000);
-            nav.fadeIn(2000);
-        });
+  loading.fadeOut('fast', function() {
+    page.fadeIn('fast', function() {
+      logo.fadeIn(2000);
+      intro.fadeIn(2000);
+      nav.fadeIn(2000);
     });
+  });
 
-    // takes current time, converts it to seconds, adds half a second because animations, limits decimals to 3
-    $('#time').text(((new Date().getTime() - startTime) / 1000 + 0.5).toFixed(3));
+  // takes current time, converts it to seconds, adds half a second because
+  // animations, limits decimals to 3
+  $('#time').text(((new Date().getTime() - startTime) / 1000 + 0.5).toFixed(3));
 });

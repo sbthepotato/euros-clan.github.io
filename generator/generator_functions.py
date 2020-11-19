@@ -1,22 +1,43 @@
-def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam, char1, char2, char3):
+import os, fnmatch, random
+
+def find(pattern, path):
+    result = []
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(name)
+    return result
+
+def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
+    """Creates a roster card
+    needs to be given all the info on the player
+    """
+    
+    chars = find(name.lower()+"*.jpg", '../images/Roster/')
+    random.shuffle(chars)
+
     print(name, rank, country, twitch, youtube,
-          twitter, steam, char1, char2, char3, "\n")
+          twitter, steam, chars, "\n")
+
     rosterCard = "<article class=\""+rank+" "+country+" col\">\n"
-    if not char2:
-        rosterCard += "<img class=\"player-bg\" src=\"images/Roster/"+name.lower()+"_"+char1+".jpg\">\n"
+    if len(chars) == 0:
+        rand = random.choice('wth')
+        rosterCard += "<img class=\"player-bg\" src=\"images/roster/0placeholder_"+rand+".jpg\">\n"
+    elif len(chars) == 1:
+        rosterCard += "<img class=\"player-bg\" src=\"images/roster/"+chars[0]+"\">\n"
     else:
         rosterCard += "<div id=\""+name.lower()+"-carousel\" class=\"carousel slide player-bg\" data-ride=\"carousel\"\
-        data-interval=\"10000\">\n\
+        data-interval=\"12000\">\n\
         <div class=\"carousel-inner\">\n\
         <div class=\"carousel-item active\">\n\
-        <img src=\"images/Roster/"+name.lower()+"_"+char1+".jpg\">\n\
+        <img src=\"images/roster/"+chars[0]+"\">\n\
         </div>\n\
         <div class=\"carousel-item\">\n\
-        <img src=\"images/Roster/"+name.lower()+"_"+char2+".jpg\">\n\
+        <img src=\"images/roster/"+chars[1]+"\">\n\
         </div>\n"
-        if char3:
+        if len(chars) == 3:
             rosterCard += "<div class=\"carousel-item\">\n\
-            <img src=\"images/Roster/"+name.lower()+"_"+char3+".jpg\">\n\
+            <img src=\"images/roster/"+chars[2]+"\">\n\
             </div>\n"
         rosterCard += "</div>\n\
         <a class=\"carousel-control-prev\" href=\"#"+name.lower()+"-carousel\" data-slide=\"prev\">\n\
@@ -67,13 +88,103 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam, char1, 
     </article>\n\n"
     return rosterCard
 
-def makeFilterBox(country):
-    print(country)
-    box = "<input type=\"checkbox\" value=\""+country+"\" id=\""+country+"\">\n\
-    <label for=\""+country+"\">\n\
-    <img src=\"images/flags/"+country+".svg\">\n\
-    </label>\n\n"
-    return box
 
-def makecheckboxes(country):
-    return print(country)
+
+def makeHTMLcheckboxes(countries):
+    """Creates the html part of the checkboxes
+    needs a list of countries which has been cleaned of duplicates. 
+    """
+    htmlCheckboxes = "<p>Country</p>"
+    if len(countries) >= 3:
+        htmlCheckboxes = "<input type=\"checkbox\" value=\"all\" id=\"all\">\n\
+        <label for=\"all\">\n\
+        All\n\
+        </label>\n"
+    for country in countries:
+        htmlCheckboxes += "<input type=\"checkbox\" value=\""+country+"\" id=\""+country+"\">\n\
+        <label for=\""+country+"\">\n\
+        <img src=\"images/flags/"+country+".svg\">\n\
+        </label>\n"
+    if len(countries) >= 3:
+        htmlCheckboxes += "<input type=\"checkbox\" value=\"none\" id=\"none\">\n\
+        <label for=\"none\">\n\
+        None\n\
+        </label>\n"
+    return htmlCheckboxes
+
+
+
+def makeCheckboxVars(countries):
+    checkboxVars = ""
+    if len(countries) >= 3:
+        checkboxVars += "var all = $(\"input[type='checkbox'][value='all']\");\n\
+        all.prop('checked', true);\n\
+        var none = $(\"input[type='checkbox'][value='none']\");\n\
+        none.prop('checked', false);\n"
+    for country in countries:
+        checkboxVars += "var "+country+"= $(\"input[type='checkbox'][value='"+country+"']\");\n"\
+        +country+".prop('checked', true);\n"
+    return checkboxVars
+
+
+
+def makePlayerClassVars(countries):
+    playerClassVars = ""
+    for country in countries:
+        playerClassVars += "var "+country+"_card = $('."+country+"');\n"\
+        +country+"_card.fadeIn();\n"
+    return playerClassVars
+
+
+
+def makeAllNoneCheck(countries):
+    allNoneCheck = ""
+    if len(countries) >= 3:
+        allNoneCheck += "// if everything is checked this will recheck 'all'\n\
+        function allChecked() {\n if("
+        for i, country in enumerate(countries):
+            if i == 0:
+                allNoneCheck += country+".prop('checked')\n"
+                continue
+            allNoneCheck += "&& "+country+".prop('checked')\n"
+        allNoneCheck += "){all.prop('checked', true);} }\n\n"
+        
+        allNoneCheck += "// if everything is unchecked this will recheck 'none'\n\
+        function noneChecked() {\n if ("
+        for i, country in enumerate(countries):
+            if i == 0:
+                allNoneCheck += country+".prop('checked') == false\n"
+                continue
+            allNoneCheck += "&& "+country+".prop('checked') == false\n"
+        allNoneCheck += "){none.prop('checked', true);} }\n\n"
+    return allNoneCheck
+
+
+
+def makeJScheckboxes(countries):
+    jsCheckboxes = ""
+    if len(countries) >= 3:
+        jsCheckboxes += "all.on('change', function () {\n\
+        if (all.prop('checked')) {\n"
+        for country in countries:
+            jsCheckboxes += country+".prop('checked', true);\n"+country+"_card.fadeIn();\n"
+        jsCheckboxes += "} });\n\n"
+
+        jsCheckboxes += "none.on('change', function () {if (none.prop('checked')) {\n\
+        all.prop('checked', false);\n"
+        for country in countries:
+            jsCheckboxes += country+".prop('checked', false);\n"+country+"_card.fadeOut();\n"
+        jsCheckboxes += "} });\n\n"
+        
+    for country in countries:
+        jsCheckboxes += country+".on('change', function () {\n\
+        if ("+country+".prop('checked')) {\n\
+        none.prop('checked', false);\n"\
+        +country+"_card.fadeIn();\n\
+        allChecked();\n\
+        } else {\n\
+        all.prop('checked', false);\n"\
+        +country+"_card.fadeOut();\n\
+        noneChecked();\n\
+        } });\n"
+    return jsCheckboxes

@@ -2,7 +2,7 @@ import json
 import shutil
 from collections import Counter
 
-from generator_functions import makePlayerCard, makeFilterBox
+from generator_functions import *
 
 # open json file
 eurosjson = open('euros.json',)
@@ -15,6 +15,7 @@ eurosjson.close()
 # sort dict alphabetically
 sortedRoster = sorted(eurosDict.items())
 
+# define function results for later use
 roster = ""
 filterbox = ""
 countrylist = []
@@ -23,27 +24,63 @@ countrylist = []
 for i in sortedRoster:
     # this is where all the info on somebody is
     data = i[1][0]
+    # make roster cards
     roster += makePlayerCard(data['name'], data['rank'], data['country'], data['twitch'],
-                             data['youtube'], data['twitter'], data['steam'], data['char1'], data['char2'], data['char3'])
+                             data['youtube'], data['twitter'], data['steam'])
+    # add country of current player to list of all countries
     countrylist.append(data['country'])
 
+# remove duplicate entries in country list
 countrylist = list(dict.fromkeys(countrylist))
+# sort countrylist alphabetically
 countrylist.sort()
 
-for i in countrylist:
-    filterbox += makeFilterBox(i)
+# make the html checkboxes
+filterbox += makeHTMLcheckboxes(countrylist)
 
-basefile = open('base.html', "rt")
-resultfile = open("../index.html", "wt")
+# open the template file and the result file
+baseHTML = open('base.html', "rt")
+resultHTML = open("../index.html", "wt")
 
-for line in basefile:
+# goes through each line in the basefile and writes it to the resultfile,
+# if <line> countains keyword we insert what was generated
+for line in baseHTML:
     if '{{roster}}' in line:
-        resultfile.write(line.replace('{{roster}}', roster))
+        resultHTML.write(line.replace('{{roster}}', roster))
         continue
     elif '{{countryfilter}}' in line:
-        resultfile.write(line.replace('{{countryfilter}}', filterbox))
+        resultHTML.write(line.replace('{{countryfilter}}', filterbox))
         continue
-    resultfile.write(line)
+    resultHTML.write(line)
 
-basefile.close()
-resultfile.close()
+baseHTML.close()
+resultHTML.close()
+
+
+# all the js
+checkboxVars = makeCheckboxVars(countrylist)
+playerClassVars = makePlayerClassVars(countrylist)
+allNoneChecked = makeAllNoneCheck(countrylist)
+jsCheckboxes = makeJScheckboxes(countrylist)
+
+baseJS = open('base.js', "rt")
+resultJS = open("../script.js", "wt")
+
+for line in baseJS:
+    if '//{{checkox variables}}' in line:
+        resultJS.write(line.replace('//{{checkox variables}}', checkboxVars))
+        continue
+    elif '//{{player class variables}}' in line:
+        resultJS.write(line.replace(
+            '//{{player class variables}}', playerClassVars))
+        continue
+    elif '//{{AllNoneChecked}}' in line:
+        resultJS.write(line.replace('//{{AllNoneChecked}}', allNoneChecked))
+        continue
+    elif '//{{JScheckboxes}}' in line:
+        resultJS.write(line.replace('//{{JScheckboxes}}', jsCheckboxes))
+        continue
+    resultJS.write(line)
+
+baseJS.close()
+resultJS.close()
