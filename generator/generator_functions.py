@@ -12,8 +12,8 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
     """Creates a roster card
     needs to be given all the info on the player
     """
-    
-    chars = find(name.lower()+"*.jpg", '../images/Roster/')
+
+    chars = find(name.lower()+"*.jpg", '../images/roster/')
     random.shuffle(chars)
 
     print(name, rank, country, twitch, youtube,
@@ -85,12 +85,12 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
         </li>\n"
     rosterCard += "</ul>\n\
     </div>\n\
-    </article>\n\n"
+    </article>\n"
     return rosterCard
 
 
 
-def makeHTMLcheckboxes(countries):
+def makeHTMLcheckboxes(countries, countriesFull):
     """Creates the html part of the checkboxes
     needs a list of countries which has been cleaned of duplicates. 
     """
@@ -101,9 +101,10 @@ def makeHTMLcheckboxes(countries):
         All\n\
         </label>\n"
     for country in countries:
+        count = countriesFull.count(country)
         htmlCheckboxes += "<input type=\"checkbox\" value=\""+country+"\" id=\""+country+"\">\n\
         <label for=\""+country+"\">\n\
-        <img src=\"images/flags/"+country+".svg\">\n\
+        <img src=\"images/flags/"+country+".svg\"> "+str(count)+"\n\
         </label>\n"
     if len(countries) >= 3:
         htmlCheckboxes += "<input type=\"checkbox\" value=\"none\" id=\"none\">\n\
@@ -156,7 +157,7 @@ def makeAllNoneCheck(countries):
                 allNoneCheck += country+".prop('checked') == false\n"
                 continue
             allNoneCheck += "&& "+country+".prop('checked') == false\n"
-        allNoneCheck += "){none.prop('checked', true);} }\n\n"
+        allNoneCheck += "){none.prop('checked', true);} }\n"
     return allNoneCheck
 
 
@@ -168,13 +169,13 @@ def makeJScheckboxes(countries):
         if (all.prop('checked')) {\n"
         for country in countries:
             jsCheckboxes += country+".prop('checked', true);\n"+country+"_card.fadeIn();\n"
-        jsCheckboxes += "} });\n\n"
+        jsCheckboxes += "} });\n"
 
         jsCheckboxes += "none.on('change', function () {if (none.prop('checked')) {\n\
         all.prop('checked', false);\n"
         for country in countries:
             jsCheckboxes += country+".prop('checked', false);\n"+country+"_card.fadeOut();\n"
-        jsCheckboxes += "} });\n\n"
+        jsCheckboxes += "} });\n"
         
     for country in countries:
         jsCheckboxes += country+".on('change', function () {\n\

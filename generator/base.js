@@ -60,7 +60,7 @@ $(document).ready(function () {
     zoom_level.prop('value', 3);
 
     var admin_social_links = $(".admin").find("ul");
-    var player_social_links = $(".player").find("ul");
+    var player_social_links = $(".member").find("ul");
     var mve_social_links = $(".mve").find("ul");
 
     var player_flags = $('.flag');
@@ -73,8 +73,8 @@ $(document).ready(function () {
     zoom_level.on('input', function () {
         if (this.value == 1) {
             // removes the social links because theyre too small for this card size, also makes the flags smaller
-            admin_social_links.fadeOut(100);
-            player_social_links.fadeOut(100, function () {
+            admin_social_links.fadeOut();
+            player_social_links.fadeOut(function () {
                 //sets width and height for cards
                 roster_text.css({ 'width': '150px' });
                 legend_box.css({ 'width': '150px' });
@@ -87,7 +87,7 @@ $(document).ready(function () {
                 player_title.css({ 'padding': '5px 0 5px' });
                 player_bg.css({ 'height': '65px' });
             });
-            mve_social_links.fadeOut(100);
+            mve_social_links.fadeOut();
 
 
         } else if (this.value == 2) {

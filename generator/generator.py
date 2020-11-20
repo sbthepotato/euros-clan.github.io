@@ -1,5 +1,4 @@
-import json
-import shutil
+import json, shutil
 from collections import Counter
 
 from generator_functions import *
@@ -30,13 +29,14 @@ for i in sortedRoster:
     # add country of current player to list of all countries
     countrylist.append(data['country'])
 
-# remove duplicate entries in country list
-countrylist = list(dict.fromkeys(countrylist))
-# sort countrylist alphabetically
+# sorty countrylist alphabetically & by number of occurence'
 countrylist.sort()
+countrylist.sort(key=Counter(countrylist).get, reverse=True)
+# remove duplicate entries in country list & put in a new list
+countrylistS = list(dict.fromkeys(countrylist))
 
 # make the html checkboxes
-filterbox += makeHTMLcheckboxes(countrylist)
+filterbox += makeHTMLcheckboxes(countrylistS, countrylist)
 
 # open the template file and the result file
 baseHTML = open('base.html', "rt")
@@ -58,10 +58,10 @@ resultHTML.close()
 
 
 # all the js
-checkboxVars = makeCheckboxVars(countrylist)
-playerClassVars = makePlayerClassVars(countrylist)
-allNoneChecked = makeAllNoneCheck(countrylist)
-jsCheckboxes = makeJScheckboxes(countrylist)
+checkboxVars = makeCheckboxVars(countrylistS)
+playerClassVars = makePlayerClassVars(countrylistS)
+allNoneChecked = makeAllNoneCheck(countrylistS)
+jsCheckboxes = makeJScheckboxes(countrylistS)
 
 baseJS = open('base.js', "rt")
 resultJS = open("../script.js", "wt")

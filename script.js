@@ -18,155 +18,130 @@ $(document).ready(function() {
   all.prop('checked', true);
   var none = $('input[type=\'checkbox\'][value=\'none\']');
   none.prop('checked', false);
-  var be = $('input[type=\'checkbox\'][value=\'be\']');
-  be.prop('checked', true);
-  var ch = $('input[type=\'checkbox\'][value=\'ch\']');
-  ch.prop('checked', true);
-  var de = $('input[type=\'checkbox\'][value=\'de\']');
-  de.prop('checked', true);
-  var fr = $('input[type=\'checkbox\'][value=\'fr\']');
-  fr.prop('checked', true);
   var gb = $('input[type=\'checkbox\'][value=\'gb\']');
   gb.prop('checked', true);
+  var fr = $('input[type=\'checkbox\'][value=\'fr\']');
+  fr.prop('checked', true);
+  var de = $('input[type=\'checkbox\'][value=\'de\']');
+  de.prop('checked', true);
+  var be = $('input[type=\'checkbox\'][value=\'be\']');
+  be.prop('checked', true);
+  var nl = $('input[type=\'checkbox\'][value=\'nl\']');
+  nl.prop('checked', true);
+  var us = $('input[type=\'checkbox\'][value=\'us\']');
+  us.prop('checked', true);
+  var ch = $('input[type=\'checkbox\'][value=\'ch\']');
+  ch.prop('checked', true);
   var hu = $('input[type=\'checkbox\'][value=\'hu\']');
   hu.prop('checked', true);
   var it = $('input[type=\'checkbox\'][value=\'it\']');
   it.prop('checked', true);
-  var nl = $('input[type=\'checkbox\'][value=\'nl\']');
-  nl.prop('checked', true);
   var no = $('input[type=\'checkbox\'][value=\'no\']');
   no.prop('checked', true);
-  var us = $('input[type=\'checkbox\'][value=\'us\']');
-  us.prop('checked', true);
 
 
   // player class variables & set all card displays to on
-  var be_card = $('.be');
-  be_card.fadeIn();
-  var ch_card = $('.ch');
-  ch_card.fadeIn();
-  var de_card = $('.de');
-  de_card.fadeIn();
-  var fr_card = $('.fr');
-  fr_card.fadeIn();
   var gb_card = $('.gb');
   gb_card.fadeIn();
+  var fr_card = $('.fr');
+  fr_card.fadeIn();
+  var de_card = $('.de');
+  de_card.fadeIn();
+  var be_card = $('.be');
+  be_card.fadeIn();
+  var nl_card = $('.nl');
+  nl_card.fadeIn();
+  var us_card = $('.us');
+  us_card.fadeIn();
+  var ch_card = $('.ch');
+  ch_card.fadeIn();
   var hu_card = $('.hu');
   hu_card.fadeIn();
   var it_card = $('.it');
   it_card.fadeIn();
-  var nl_card = $('.nl');
-  nl_card.fadeIn();
   var no_card = $('.no');
   no_card.fadeIn();
-  var us_card = $('.us');
-  us_card.fadeIn();
 
 
   // if everything is checked this will recheck 'all'
   function allChecked() {
-    if (be.prop('checked') && ch.prop('checked') && de.prop('checked') &&
-        fr.prop('checked') && gb.prop('checked') && hu.prop('checked') &&
-        it.prop('checked') && nl.prop('checked') && no.prop('checked') &&
-        us.prop('checked')) {
+    if (gb.prop('checked') && fr.prop('checked') && de.prop('checked') &&
+        be.prop('checked') && nl.prop('checked') && us.prop('checked') &&
+        ch.prop('checked') && hu.prop('checked') && it.prop('checked') &&
+        no.prop('checked')) {
       all.prop('checked', true);
     }
   }
 
   // if everything is unchecked this will recheck 'none'
   function noneChecked() {
-    if (be.prop('checked') == false && ch.prop('checked') == false &&
-        de.prop('checked') == false && fr.prop('checked') == false &&
-        gb.prop('checked') == false && hu.prop('checked') == false &&
-        it.prop('checked') == false && nl.prop('checked') == false &&
-        no.prop('checked') == false && us.prop('checked') == false) {
+    if (gb.prop('checked') == false && fr.prop('checked') == false &&
+        de.prop('checked') == false && be.prop('checked') == false &&
+        nl.prop('checked') == false && us.prop('checked') == false &&
+        ch.prop('checked') == false && hu.prop('checked') == false &&
+        it.prop('checked') == false && no.prop('checked') == false) {
       none.prop('checked', true);
     }
   }
 
 
-
   all.on('change', function() {
     if (all.prop('checked')) {
-      be.prop('checked', true);
-      be_card.fadeIn();
-      ch.prop('checked', true);
-      ch_card.fadeIn();
-      de.prop('checked', true);
-      de_card.fadeIn();
-      fr.prop('checked', true);
-      fr_card.fadeIn();
       gb.prop('checked', true);
       gb_card.fadeIn();
+      fr.prop('checked', true);
+      fr_card.fadeIn();
+      de.prop('checked', true);
+      de_card.fadeIn();
+      be.prop('checked', true);
+      be_card.fadeIn();
+      nl.prop('checked', true);
+      nl_card.fadeIn();
+      us.prop('checked', true);
+      us_card.fadeIn();
+      ch.prop('checked', true);
+      ch_card.fadeIn();
       hu.prop('checked', true);
       hu_card.fadeIn();
       it.prop('checked', true);
       it_card.fadeIn();
-      nl.prop('checked', true);
-      nl_card.fadeIn();
       no.prop('checked', true);
       no_card.fadeIn();
-      us.prop('checked', true);
-      us_card.fadeIn();
     }
   });
-
   none.on('change', function() {
     if (none.prop('checked')) {
       all.prop('checked', false);
-      be.prop('checked', false);
-      be_card.fadeOut();
-      ch.prop('checked', false);
-      ch_card.fadeOut();
-      de.prop('checked', false);
-      de_card.fadeOut();
-      fr.prop('checked', false);
-      fr_card.fadeOut();
       gb.prop('checked', false);
       gb_card.fadeOut();
+      fr.prop('checked', false);
+      fr_card.fadeOut();
+      de.prop('checked', false);
+      de_card.fadeOut();
+      be.prop('checked', false);
+      be_card.fadeOut();
+      nl.prop('checked', false);
+      nl_card.fadeOut();
+      us.prop('checked', false);
+      us_card.fadeOut();
+      ch.prop('checked', false);
+      ch_card.fadeOut();
       hu.prop('checked', false);
       hu_card.fadeOut();
       it.prop('checked', false);
       it_card.fadeOut();
-      nl.prop('checked', false);
-      nl_card.fadeOut();
       no.prop('checked', false);
       no_card.fadeOut();
-      us.prop('checked', false);
-      us_card.fadeOut();
     }
   });
-
-  be.on('change', function() {
-    if (be.prop('checked')) {
+  gb.on('change', function() {
+    if (gb.prop('checked')) {
       none.prop('checked', false);
-      be_card.fadeIn();
+      gb_card.fadeIn();
       allChecked();
     } else {
       all.prop('checked', false);
-      be_card.fadeOut();
-      noneChecked();
-    }
-  });
-  ch.on('change', function() {
-    if (ch.prop('checked')) {
-      none.prop('checked', false);
-      ch_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      ch_card.fadeOut();
-      noneChecked();
-    }
-  });
-  de.on('change', function() {
-    if (de.prop('checked')) {
-      none.prop('checked', false);
-      de_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      de_card.fadeOut();
+      gb_card.fadeOut();
       noneChecked();
     }
   });
@@ -181,14 +156,58 @@ $(document).ready(function() {
       noneChecked();
     }
   });
-  gb.on('change', function() {
-    if (gb.prop('checked')) {
+  de.on('change', function() {
+    if (de.prop('checked')) {
       none.prop('checked', false);
-      gb_card.fadeIn();
+      de_card.fadeIn();
       allChecked();
     } else {
       all.prop('checked', false);
-      gb_card.fadeOut();
+      de_card.fadeOut();
+      noneChecked();
+    }
+  });
+  be.on('change', function() {
+    if (be.prop('checked')) {
+      none.prop('checked', false);
+      be_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      be_card.fadeOut();
+      noneChecked();
+    }
+  });
+  nl.on('change', function() {
+    if (nl.prop('checked')) {
+      none.prop('checked', false);
+      nl_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      nl_card.fadeOut();
+      noneChecked();
+    }
+  });
+  us.on('change', function() {
+    if (us.prop('checked')) {
+      none.prop('checked', false);
+      us_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      us_card.fadeOut();
+      noneChecked();
+    }
+  });
+  ch.on('change', function() {
+    if (ch.prop('checked')) {
+      none.prop('checked', false);
+      ch_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      ch_card.fadeOut();
       noneChecked();
     }
   });
@@ -214,17 +233,6 @@ $(document).ready(function() {
       noneChecked();
     }
   });
-  nl.on('change', function() {
-    if (nl.prop('checked')) {
-      none.prop('checked', false);
-      nl_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      nl_card.fadeOut();
-      noneChecked();
-    }
-  });
   no.on('change', function() {
     if (no.prop('checked')) {
       none.prop('checked', false);
@@ -233,17 +241,6 @@ $(document).ready(function() {
     } else {
       all.prop('checked', false);
       no_card.fadeOut();
-      noneChecked();
-    }
-  });
-  us.on('change', function() {
-    if (us.prop('checked')) {
-      none.prop('checked', false);
-      us_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      us_card.fadeOut();
       noneChecked();
     }
   });
@@ -285,7 +282,7 @@ $(document).ready(function() {
   zoom_level.prop('value', 3);
 
   var admin_social_links = $('.admin').find('ul');
-  var player_social_links = $('.player').find('ul');
+  var player_social_links = $('.member').find('ul');
   var mve_social_links = $('.mve').find('ul');
 
   var player_flags = $('.flag');
@@ -299,8 +296,8 @@ $(document).ready(function() {
     if (this.value == 1) {
       // removes the social links because theyre too small for this card size,
       // also makes the flags smaller
-      admin_social_links.fadeOut(100);
-      player_social_links.fadeOut(100, function() {
+      admin_social_links.fadeOut();
+      player_social_links.fadeOut(function() {
         // sets width and height for cards
         roster_text.css({'width': '150px'});
         legend_box.css({'width': '150px'});
@@ -319,7 +316,7 @@ $(document).ready(function() {
         player_title.css({'padding': '5px 0 5px'});
         player_bg.css({'height': '65px'});
       });
-      mve_social_links.fadeOut(100);
+      mve_social_links.fadeOut();
 
 
     } else if (this.value == 2) {
