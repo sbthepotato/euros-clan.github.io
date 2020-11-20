@@ -104,7 +104,7 @@ def makeHTMLcheckboxes(countries, countriesFull):
         count = countriesFull.count(country)
         htmlCheckboxes += "<input type=\"checkbox\" value=\""+country+"\" id=\""+country+"\">\n\
         <label for=\""+country+"\">\n\
-        <img src=\"images/flags/"+country+".svg\"> "+str(count)+"\n\
+        <img src=\"images/flags/"+country+".svg\"><p>"+str(count)+"</p>\n\
         </label>\n"
     if len(countries) >= 3:
         htmlCheckboxes += "<input type=\"checkbox\" value=\"none\" id=\"none\">\n\
