@@ -13,8 +13,6 @@
 
     <link rel="preload" href="images/euro_banner.jpg" as="image">
 
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- link rel="stylesheet" href="bootstrap.min.css" -->
     <link rel="stylesheet" href="style.css">
@@ -27,7 +25,7 @@
     <script src="script.js"></script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="250">
+<body data-spy="scroll" data-target=".navbar" data-offset="64">
     <div id="loading-screen">
         <img id="loading-logo" src="images/blank_WhiteBG.svg"></img>
         <div id="warning">
@@ -48,7 +46,7 @@
             </a>
         </div>
 
-        <nav class="navbar justify-content-end fixed-top">
+        <nav class="nav-bar">
             <ul class="">
                 <li class="nav-item">
                     <a class="nav-link" href="#about">
@@ -84,27 +82,24 @@
         </header>
 
 
-
-        <main class="container" id="main-page">
-
-            <section id="about">
-                <h1 class="row">About us</h1>
-
-                <article class="about" class="row">
-                    <img src="images/clan_banner.png" id="clan-banner" class="float-left">
+        <main class="container-fluid" id="main-page">
+            <section id="about" class="container row">
+                <img src="images/clan_banner.png" id="clan-banner" class="col">
+                <article class="about col">
+                    <h1 class="row">About us</h1>
                     Hey! We’re the Euros. In case you haven’t heard of us before, we are a speedrun/challenge clan
                     growing in the community.
                     We strive to be the best we can, while teaching others along the way.
                     <br>
                     <br>
-                    <strong>How it all started</strong>
-                    <br>
-                    <br>
+                    <h4>How it all started</h4>
                     Wami always wanted to do something “more” with PvE in Destiny. He had seen all the speedruns from
                     clans
                     like Redeem or the solo raids from people like Slayerage.
                     The main problem he had is that he didn’t have
-                    a team to play with. Eventually he met another Dutch guy while watching twitch called: “Obliviatum.”
+                    a team to play with.
+
+                    Eventually he met another Dutch guy while watching twitch called: “Obliviatum.”
                     That’s where it all started. He had some friends that were interested in doing challenges and
                     speedruns
                     and we pretty much used LFG to find others like us.
@@ -126,39 +121,37 @@
                     <br>
                     <br>
                     To this day the clan has kept its history to have mostly EU players.
-                    <br>
-                    <br>
-                    <strong>Find us:</strong>
-                    <br>
+                </article>
 
-                    <div class="social-links" class="row">
-                        <a target="_blank" href="https://discord.gg/RyyHfTD">
-                            <img src="images/about-us-logos/discord_logo_color.png" class="big-icon" alt="discord logo">
-                        </a>
-                        <a target="_blank" href="https://twitter.com/Euros_Clan">
-                            <img src="images/about-us-logos/Twitter_Logo_Blue.png" class="big-icon" alt="twitter logo">
-                        </a>
+                <div class="social-links" class="row">
+                    <h4>Find us:</h4>
+                    <br>
+                    <div>
                         <a target="_blank" href="https://www.bungie.net/en/ClanV2?groupid=1901299">
                             <img src="images/about-us-logos/Shield_Crest.png" class="big-icon" alt="bungie shield logo">
+                        </a>
+                        <a target="_blank" href="https://discord.gg/RyyHfTD">
+                            <img src="images/about-us-logos/discord_logo_color.png" class="big-icon" alt="discord logo">
                         </a>
                         <a target="_blank" href="https://steamcommunity.com/groups/Euros-Clan">
                             <img src="images/about-us-logos/steam_logo1.png" class="big-icon" alt="steam logo">
                         </a>
+                        <a target="_blank" href="https://twitter.com/Euros_Clan">
+                            <img src="images/about-us-logos/Twitter_Logo_Blue.png" class="big-icon" alt="twitter logo">
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCuJ7K8ywtA28Lf6ck0xkRyw">
+                            <img src="images/about-us-logos/youtube_social_icon_red.png" class="big-icon"
+                                alt="twitter logo">
+                        </a>
                     </div>
-                </article>
+                </div>
             </section>
 
-            <section id="roster">
-                <h1 class="row">Roster </h1>
-
-                <h2 class="row" id="show-hide-filter">Filter </h2>
-
+            <section id="roster" class="container row">
+                <h1 class="row">Roster</h1>
                 <form id="filter" action="" class="row">
-
                     <div id="country-filter-container" class="col-12">
-
                         {{countryfilter}}
-
                     </div>
 
                     <div id="img-toggle-container" class="col">
@@ -167,7 +160,6 @@
                         <label for="hide-img">
                             Hide
                         </label>
-
                         <input type="radio" name="img-toggle" value="show-img" id="show-img">
                         <label for="show-img">
                             Show
@@ -182,14 +174,11 @@
                 </form>
 
                 <section id="pc-roster" class="row">
-
-                {{roster}}
-
+                    {{roster}}
                 </section>
 
             </section>
         </main>
-
 
 
         <footer>

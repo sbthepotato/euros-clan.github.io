@@ -1,18 +1,4 @@
 $(document).ready(function() {
-  // show hide button
-  var show_hide_filter = $('[id=\'show-hide-filter\']');
-
-  // filter box
-  var filter_box = $('form[id=\'filter\']');
-
-  show_hide_filter.click(function() {
-    if (filter_box.css('display') == 'none') {
-      filter_box.slideDown();
-    } else {
-      filter_box.slideUp();
-    }
-  });
-
   // checkbox variables & set filtering to default
   var all = $('input[type=\'checkbox\'][value=\'all\']');
   all.prop('checked', true);
@@ -72,7 +58,6 @@ $(document).ready(function() {
       all.prop('checked', true);
     }
   }
-
   // if everything is unchecked this will recheck 'none'
   function noneChecked() {
     if (gb.prop('checked') == false && fr.prop('checked') == false &&
@@ -380,7 +365,6 @@ $(document).ready(function() {
 });
 
 
-
 $(window).on('load', function() {
   var loading = $('div[id=\'loading-screen\']');
   var page = $('div[id=\'page\']');
@@ -396,7 +380,6 @@ $(window).on('load', function() {
       nav.fadeIn(2000);
     });
   });
-
   // takes current time, converts it to seconds, adds half a second because
   // animations, limits decimals to 3
   $('#time').text(((new Date().getTime() - startTime) / 1000 + 0.5).toFixed(3));

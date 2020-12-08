@@ -1,4 +1,5 @@
-import json, shutil
+import json
+import shutil
 from collections import Counter
 
 from generator_functions import *

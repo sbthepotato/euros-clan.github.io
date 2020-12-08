@@ -1,49 +1,5 @@
-/* Colour schemes */
-@media (prefers-color-scheme: light) {
-    body {
-        background: #f5f5f5; 
-        color: #222; 
-    }
-
-    .roster-container{
-        background: rgba(245, 245, 245, 0.8);
-    }
-
-    #loading-screen p{
-        display: none;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-         background: #222; 
-         color: #f5f5f5; 
-    }
-
-    .roster-container{
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    #header-img{
-        opacity: 0.75;
-    }
-}
-
-@media (prefers-color-scheme: no-preference){
-    body {
-        background: #222; 
-        color: #f5f5f5; 
-   }
-
-    .roster-container{
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    #header-img{
-        opacity: 0.75;
-    }
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 
 /* Mobile and non mobile display settings*/
@@ -77,8 +33,6 @@
         display: none;
     }
 }
-
-
 
 @media(min-width: 576px) and (max-width: 992px){
     #logo{
@@ -126,15 +80,21 @@
 }
 
 
-
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-    font-family: sans-serif;
-    margin: 0 0 150px;
+    max-width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0 0 124px;
+    background: #242424; 
+    color: #f5f5f5; 
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
 }
 
 /* Adds more widths to bootstrap container for large screens */
@@ -150,30 +110,18 @@ body {
     }
 }
 
-main {
+#main-page {
     overflow: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 15px;
-    padding-left: 15px;
     height: 100%;
+    padding: 0;
 }
 
 main h1, h2{
-    background: rgba(20, 20, 20, 0.8);
-    color: #f5f5f5;
+    justify-content: center;
     padding: 10px;
-    font-weight: bold;
-    font-size: 32px;
-    border-radius: 10px;
-}
-
-main h1{
-    margin-top: 150px;
 }
 
 main h2{
-    font-size: 24px;
     padding: 5px 20px;
     margin-top: 0px;
     font-weight: normal;
@@ -278,10 +226,11 @@ header {
     z-index: 4;
     width: 100%;
     padding-top: 56.25%;
+    opacity: 0.4;
 }
 
 #header-bg{
-    background: #222;
+    background: #242424;
     width: 100%;
     padding-top: 56.25%;
     position: absolute;
@@ -302,7 +251,7 @@ header {
 #logo p{
     color: #f5f5f5;
     font-style: italic;
-    text-shadow: 1px 1px 2px #222;
+    text-shadow: 1px 1px 2px #242424;
 }
 
 /* welcome text */
@@ -312,12 +261,12 @@ header {
     top: 30%;
     left: 7%;
     z-index: 5;
-    text-shadow: 1px 1px 3px #222;
+    text-shadow: 1px 1px 3px #242424;
     color: #f5f5f5;
 }
 
 #intro h1{
-    text-shadow: 1px 1px 3px #222;
+    text-shadow: 1px 1px 3px #242424;
 }
 
 #intro a{
@@ -338,22 +287,21 @@ header {
 /* Nav bar background & logo */
 #nav-bg{
     width: 100%;
-    height: 50px;
+    height: 48px;
     position: fixed;
     margin: 0px;
     z-index: 2;
-    background: rgba(22, 22, 22, 0.95);;
+    background: rgba(24, 24, 24, 0.95);;
     border-bottom: 2px solid #dd2222;
 }
 
 #nav-bg img{
-    width: 45px;
-    margin-left: 50px;
+    width: 32px;
     cursor: pointer;
     border-radius: 50%;
     background: #dd2222;
-    padding: auto 0;
     transition: 0.4s border-radius;
+    margin: 6px 32px;
 }
 
 #nav-bg img:hover{
@@ -361,17 +309,20 @@ header {
 }
 
 /* Nav bar */
-nav{
+.nav-bar{
     position: fixed;
-    margin-left: 115px;
+    margin-left: 128px;
     width: auto;
     min-width: 350px;
     z-index: 5;
-    text-shadow: 1px 1px 3px #222;
+    text-shadow: 1px 1px 3px #242424;
+    right: -96px;
+    top: 4px;
 }
 
 nav li.nav-item {
     display: inline-block;
+    border-radius: 4px;
     transition: color 0.4s, background 0.4s;
 }
 
@@ -395,10 +346,29 @@ nav a.nav-link:hover{
 
 
 
-/* Index */
+/* about */
+#about{
+    padding-top: 128px;
+    margin: auto;
+    text-align: center;
+}
+
+#about h1{
+    width: 100%;
+}
+
+#clan-banner{
+    max-height: 884px;
+    max-width: 496px;
+}
+
 .about{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.about col{
+    margin-right: 16px;
 }
 
 .about a{
@@ -409,28 +379,36 @@ nav a.nav-link:hover{
     font-style: italic;
 }
 
-#clan-banner{
-    width: 25%;
-    max-width: 325px;
-    height: auto;
+.social-links{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+.social-links div{
+    width: auto;
+}
+
+.social-links div a{
+    transition: opacity 0.4s;
+}
+
+.social-links div:hover > a {
+    opacity: 0.5;
+}
+
+.social-links div:hover > a:hover {
+    opacity: 1.0;
 }
 
 .big-icon{
     max-width: 80px;
     max-height: 80px;
-    margin: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
     transition: 0.4s max-width, 0.4s max-height, 0.4s margin;
 }
 
-.big-icon:hover{
-    max-width: 100px;
-    max-height: 100px;
-    margin: 20px 30px;
-}
-
-.social-links{
-    text-align: center;
-}
 
 
 
@@ -438,12 +416,12 @@ nav a.nav-link:hover{
 #filter{
     width: 100%;
     color: #dd2222;
+    font-weight: bold;
     transition: color 0.4s, background 0.4s;
 }
 
-#filter p{
-    margin-top: 10px;
-    margin-bottom: 0;
+#filter div{
+    margin: 16px;
 }
 
 input {
@@ -455,32 +433,33 @@ form{
 }
 
 input + label {
-    margin: 5px 10px 5px 10px;
-    height: 24px;
+    margin: 4px 8px 4px 8px;
+    height: 32px;
     cursor: pointer;
     opacity: 0.4;
     transition: opacity 0.4s;
     border-radius: 4px;
 }
 
-label img{
+#country-filter-container label{
+    background: #f5f5f5;
+    display: inline-block;
+    width: 64px;
+    border-radius: 4px;
+}
+
+#country-filter-container label img{
     height: 100%;
     border-radius: 4px 0px 0px 4px;
     position: relative;
-    top: -1.2px;
-    z-index: 1;
+    float: left;
 }
 
-label p{
+#country-filter-container label p{
     display: inline-block;
-    background: #f5f5f5;
-    border-radius: 0px 4px 4px 0px;
-    width: 16px;
-    height: 24px;
     position: relative;
     text-align: right;
-    padding-right: 4px;
-    left: -5px;
+    top: 4px;
 }
 
 input:checked + label{
@@ -493,6 +472,31 @@ input:checked + label{
    display: block;
 }
 
+#img-toggle-container label{
+    background: #f5f5f5;
+    width: 64px;
+    transition: color 0.4s, background 0.4s;
+}
+
+label[for=hide-img]{
+    border-radius: 4px 0px 0px 4px;
+    margin-right: -1px;
+    padding: 2px 8px 0px 8px;
+    opacity: 1;
+}
+
+label[for=show-img]{
+    border-radius: 0px 4px 4px 0px;
+    margin-left: -1px;
+    padding: 2px 8px 0px 8px;
+    opacity: 1;
+}
+
+#img-toggle-container input:checked + label{
+    background: #dd2222;
+    color: #f5f5f5;
+}
+
 #zoom-container{
    margin-right: 15%;
    height: 80px;
@@ -501,7 +505,7 @@ input:checked + label{
 #zoom-level{
     display: block;
     margin: 16px auto 5px;
-    width: 150px;
+    width: 124px;
     padding: 5px;
     -webkit-appearance: none;
     height: 1px;
@@ -530,11 +534,21 @@ input:checked + label{
 
 
 /* player cards */
-#pc-roster{
+#roster{
+    margin: auto;
+    margin-top: 64px;
+}
+
+#roster h1{
     width: 100%;
 }
 
-.member, .admin, .mve{
+#pc-roster{
+    width: 100%;
+    margin: auto;
+}
+
+.member, .admin{
     text-align: center;
     padding: 1px;
     margin: 15px 30px;
@@ -543,15 +557,11 @@ input:checked + label{
 }
 
 .admin .roster-container{ 
-    border-bottom: 6px solid #ffcc00;
+    border-bottom: 4px solid #ffcc00;
 }
 
 .member .roster-container{
-    border-bottom: 6px solid #003399;
-}
-
-.mve .roster-container{
-    border-bottom: 6px solid #dd2222;
+    border-bottom: 4px solid #003399;
 }
 
 .member a, .admin a{
@@ -566,11 +576,9 @@ input:checked + label{
     text-shadow: 0px 0px 4px #ffcc00;
 }
 
-.mve a:hover{
-    text-shadow: 0px 0px 4px #dd2222;
-}
 
 .roster-container{
+    background: rgba(0, 0, 0, 0.8);
     transition: 0.4s width, 0.4s height;
     position: absolute;
     width: 300px;
@@ -582,7 +590,7 @@ input:checked + label{
 }
 
 .roster-title{
-    font-family: monospace;
+    font-family: 'Fira Code', monospace;
     padding: 10px 0 5px;
     width: 100%;
     margin: auto;
@@ -594,7 +602,7 @@ input:checked + label{
     height: 400px;
     width: 300px;
     overflow: hidden;
-    box-shadow: 0px 0px 4px #222;
+    box-shadow: 0px 0px 4px #242424;
 }
 
 article .roster-container ul {
@@ -605,10 +613,17 @@ article .roster-container ul {
     text-align: center;
 }
 
+/* Only applies when 2 list elements */
+article .roster-container li:first-child:nth-last-child(2),
+article .roster-container li:first-child:nth-last-child(2) ~ li {
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
 article .roster-container li {
     display: inline-block;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 6%;
+    padding-right: 6%;
     vertical-align: top;
 }
 
@@ -625,10 +640,6 @@ article .roster-container li {
     display: inline-block;
 }
 
-.hidden{
-    opacity: 0;
-}
-
 .carousel {
     display: inline-block;
 }
@@ -641,6 +652,7 @@ article .roster-container li {
 
 
 /* legend */
+/* doesnt exist right */
 #legend div{
     margin: 15px 30px;
     padding: 1px;
@@ -658,10 +670,6 @@ article .roster-container li {
 
 #legend-admin{
     background-color: #ffcc00;
-}
-
-#legend-mve{
-    background-color: #dd2222;
 }
 
 #legend-member{
@@ -685,7 +693,6 @@ footer {
 }
 
 footer p {
-    font-size: 0.8em;
     margin: 8px;
     color: white;
 }

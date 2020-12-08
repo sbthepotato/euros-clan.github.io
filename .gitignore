@@ -3,3 +3,4 @@ bootstrap.min.js
 bootstrap.min.css
 **/Icon*
 **/.DS_Store*
+generator/__pycache__
