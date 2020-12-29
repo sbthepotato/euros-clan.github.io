@@ -10,12 +10,12 @@ $(document).ready(function() {
   fr.prop('checked', true);
   var de = $('input[type=\'checkbox\'][value=\'de\']');
   de.prop('checked', true);
-  var be = $('input[type=\'checkbox\'][value=\'be\']');
-  be.prop('checked', true);
   var nl = $('input[type=\'checkbox\'][value=\'nl\']');
   nl.prop('checked', true);
   var us = $('input[type=\'checkbox\'][value=\'us\']');
   us.prop('checked', true);
+  var be = $('input[type=\'checkbox\'][value=\'be\']');
+  be.prop('checked', true);
   var ch = $('input[type=\'checkbox\'][value=\'ch\']');
   ch.prop('checked', true);
   var hu = $('input[type=\'checkbox\'][value=\'hu\']');
@@ -33,12 +33,12 @@ $(document).ready(function() {
   fr_card.fadeIn();
   var de_card = $('.de');
   de_card.fadeIn();
-  var be_card = $('.be');
-  be_card.fadeIn();
   var nl_card = $('.nl');
   nl_card.fadeIn();
   var us_card = $('.us');
   us_card.fadeIn();
+  var be_card = $('.be');
+  be_card.fadeIn();
   var ch_card = $('.ch');
   ch_card.fadeIn();
   var hu_card = $('.hu');
@@ -52,7 +52,7 @@ $(document).ready(function() {
   // if everything is checked this will recheck 'all'
   function allChecked() {
     if (gb.prop('checked') && fr.prop('checked') && de.prop('checked') &&
-        be.prop('checked') && nl.prop('checked') && us.prop('checked') &&
+        nl.prop('checked') && us.prop('checked') && be.prop('checked') &&
         ch.prop('checked') && hu.prop('checked') && it.prop('checked') &&
         no.prop('checked')) {
       all.prop('checked', true);
@@ -61,8 +61,8 @@ $(document).ready(function() {
   // if everything is unchecked this will recheck 'none'
   function noneChecked() {
     if (gb.prop('checked') == false && fr.prop('checked') == false &&
-        de.prop('checked') == false && be.prop('checked') == false &&
-        nl.prop('checked') == false && us.prop('checked') == false &&
+        de.prop('checked') == false && nl.prop('checked') == false &&
+        us.prop('checked') == false && be.prop('checked') == false &&
         ch.prop('checked') == false && hu.prop('checked') == false &&
         it.prop('checked') == false && no.prop('checked') == false) {
       none.prop('checked', true);
@@ -78,12 +78,12 @@ $(document).ready(function() {
       fr_card.fadeIn();
       de.prop('checked', true);
       de_card.fadeIn();
-      be.prop('checked', true);
-      be_card.fadeIn();
       nl.prop('checked', true);
       nl_card.fadeIn();
       us.prop('checked', true);
       us_card.fadeIn();
+      be.prop('checked', true);
+      be_card.fadeIn();
       ch.prop('checked', true);
       ch_card.fadeIn();
       hu.prop('checked', true);
@@ -103,12 +103,12 @@ $(document).ready(function() {
       fr_card.fadeOut();
       de.prop('checked', false);
       de_card.fadeOut();
-      be.prop('checked', false);
-      be_card.fadeOut();
       nl.prop('checked', false);
       nl_card.fadeOut();
       us.prop('checked', false);
       us_card.fadeOut();
+      be.prop('checked', false);
+      be_card.fadeOut();
       ch.prop('checked', false);
       ch_card.fadeOut();
       hu.prop('checked', false);
@@ -152,17 +152,6 @@ $(document).ready(function() {
       noneChecked();
     }
   });
-  be.on('change', function() {
-    if (be.prop('checked')) {
-      none.prop('checked', false);
-      be_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      be_card.fadeOut();
-      noneChecked();
-    }
-  });
   nl.on('change', function() {
     if (nl.prop('checked')) {
       none.prop('checked', false);
@@ -182,6 +171,17 @@ $(document).ready(function() {
     } else {
       all.prop('checked', false);
       us_card.fadeOut();
+      noneChecked();
+    }
+  });
+  be.on('change', function() {
+    if (be.prop('checked')) {
+      none.prop('checked', false);
+      be_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      be_card.fadeOut();
       noneChecked();
     }
   });
