@@ -154,7 +154,7 @@ def makeJScheckboxes(countries):
     jsCheckboxes = ""
     if len(countries) >= 3:
         jsCheckboxes += "all.on('change', function () {\n\
-        if (all.prop('checked')) {\n"
+        if (all.prop('checked')) {\n none.prop('checked', false);"
         for country in countries:
             jsCheckboxes += country + \
                 ".prop('checked', true);\n"+country+"_card.fadeIn();\n"

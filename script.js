@@ -72,6 +72,7 @@ $(document).ready(function() {
 
   all.on('change', function() {
     if (all.prop('checked')) {
+      none.prop('checked', false);
       gb.prop('checked', true);
       gb_card.fadeIn();
       fr.prop('checked', true);
