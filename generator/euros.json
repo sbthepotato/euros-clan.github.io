@@ -142,17 +142,6 @@
             "steam": "id/Wildrize"
         }
     ],
-    "nytho986": [
-        {
-            "name": "Nytho986",
-            "rank": "member",
-            "country": "fr",
-            "twitch": "",
-            "youtube": "channel/UCTSqhQx1tqFST5JkKpaYZug",
-            "twitter": "Nytho17",
-            "steam": "profiles/76561198991353854"
-        }
-    ],
     "lulu038": [
         {
             "name": "Lulu038",
@@ -239,6 +228,17 @@
             "youtube": "",
             "twitter": "Eternal1l",
             "steam": "id/Eternal___"
+        }
+    ],
+    "son":[
+        {
+            "name": "Son",
+            "rank": "member",
+            "country": "gb",
+            "twitch": "son_012",
+            "youtube": "",
+            "twitter": "Son01214",
+            "steam": "profiles/76561199067309236"
         }
     ]
 }

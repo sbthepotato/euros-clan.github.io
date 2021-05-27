@@ -6,10 +6,10 @@ $(document).ready(function() {
   none.prop('checked', false);
   var gb = $('input[type=\'checkbox\'][value=\'gb\']');
   gb.prop('checked', true);
-  var fr = $('input[type=\'checkbox\'][value=\'fr\']');
-  fr.prop('checked', true);
   var de = $('input[type=\'checkbox\'][value=\'de\']');
   de.prop('checked', true);
+  var fr = $('input[type=\'checkbox\'][value=\'fr\']');
+  fr.prop('checked', true);
   var nl = $('input[type=\'checkbox\'][value=\'nl\']');
   nl.prop('checked', true);
   var us = $('input[type=\'checkbox\'][value=\'us\']');
@@ -29,10 +29,10 @@ $(document).ready(function() {
   // player class variables & set all card displays to on
   var gb_card = $('.gb');
   gb_card.fadeIn();
-  var fr_card = $('.fr');
-  fr_card.fadeIn();
   var de_card = $('.de');
   de_card.fadeIn();
+  var fr_card = $('.fr');
+  fr_card.fadeIn();
   var nl_card = $('.nl');
   nl_card.fadeIn();
   var us_card = $('.us');
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
   // if everything is checked this will recheck 'all'
   function allChecked() {
-    if (gb.prop('checked') && fr.prop('checked') && de.prop('checked') &&
+    if (gb.prop('checked') && de.prop('checked') && fr.prop('checked') &&
         nl.prop('checked') && us.prop('checked') && be.prop('checked') &&
         ch.prop('checked') && hu.prop('checked') && it.prop('checked') &&
         no.prop('checked')) {
@@ -60,8 +60,8 @@ $(document).ready(function() {
   }
   // if everything is unchecked this will recheck 'none'
   function noneChecked() {
-    if (gb.prop('checked') == false && fr.prop('checked') == false &&
-        de.prop('checked') == false && nl.prop('checked') == false &&
+    if (gb.prop('checked') == false && de.prop('checked') == false &&
+        fr.prop('checked') == false && nl.prop('checked') == false &&
         us.prop('checked') == false && be.prop('checked') == false &&
         ch.prop('checked') == false && hu.prop('checked') == false &&
         it.prop('checked') == false && no.prop('checked') == false) {
@@ -75,10 +75,10 @@ $(document).ready(function() {
       none.prop('checked', false);
       gb.prop('checked', true);
       gb_card.fadeIn();
-      fr.prop('checked', true);
-      fr_card.fadeIn();
       de.prop('checked', true);
       de_card.fadeIn();
+      fr.prop('checked', true);
+      fr_card.fadeIn();
       nl.prop('checked', true);
       nl_card.fadeIn();
       us.prop('checked', true);
@@ -100,10 +100,10 @@ $(document).ready(function() {
       all.prop('checked', false);
       gb.prop('checked', false);
       gb_card.fadeOut();
-      fr.prop('checked', false);
-      fr_card.fadeOut();
       de.prop('checked', false);
       de_card.fadeOut();
+      fr.prop('checked', false);
+      fr_card.fadeOut();
       nl.prop('checked', false);
       nl_card.fadeOut();
       us.prop('checked', false);
@@ -131,17 +131,6 @@ $(document).ready(function() {
       noneChecked();
     }
   });
-  fr.on('change', function() {
-    if (fr.prop('checked')) {
-      none.prop('checked', false);
-      fr_card.fadeIn();
-      allChecked();
-    } else {
-      all.prop('checked', false);
-      fr_card.fadeOut();
-      noneChecked();
-    }
-  });
   de.on('change', function() {
     if (de.prop('checked')) {
       none.prop('checked', false);
@@ -150,6 +139,17 @@ $(document).ready(function() {
     } else {
       all.prop('checked', false);
       de_card.fadeOut();
+      noneChecked();
+    }
+  });
+  fr.on('change', function() {
+    if (fr.prop('checked')) {
+      none.prop('checked', false);
+      fr_card.fadeIn();
+      allChecked();
+    } else {
+      all.prop('checked', false);
+      fr_card.fadeOut();
       noneChecked();
     }
   });
