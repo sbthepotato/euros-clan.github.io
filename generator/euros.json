@@ -164,17 +164,6 @@
             "steam": "id/Nexalty"
         }
     ],
-    "powlau": [
-        {
-            "name": "Powlau",
-            "rank": "member",
-            "country": "fr",
-            "twitch": "",
-            "youtube": "channel/UC8_uP9Ido9tkSdAenfxNgCw",
-            "twitter": "powlau_",
-            "steam": "id/powlau"
-        }
-    ],
     "corten": [
         {
             "name": "Corten",
@@ -195,17 +184,6 @@
             "youtube": "",
             "twitter": "",
             "steam": "profiles/76561198813416848"
-        }
-    ],
-    "slayerr": [
-        {
-            "name": "Slayerr",
-            "rank": "member",
-            "country": "gb",
-            "twitch": "siayerr_",
-            "youtube": "",
-            "twitter": "Slayerr_gb",
-            "steam": "profiles/76561199030633962"
         }
     ],
     "eternal": [

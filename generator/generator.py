@@ -5,7 +5,7 @@ from collections import Counter
 from generator_functions import *
 
 # open json file
-eurosjson = open('euros.json',)
+eurosjson = open('euros.json',encoding='utf8')
 
 # convert file to dict
 eurosDict = json.load(eurosjson)
@@ -40,8 +40,8 @@ countrylistS = list(dict.fromkeys(countrylist))
 filterbox += makeHTMLcheckboxes(countrylistS, countrylist)
 
 # open the template file and the result file
-baseHTML = open('base.html', "rt")
-resultHTML = open("../index.html", "wt")
+baseHTML = open('base.html', "rt", encoding='utf8')
+resultHTML = open("../index.html", "wt", encoding='utf8')
 
 # goes through each line in the basefile and writes it to the resultfile,
 # if <line> countains keyword we insert what was generated
@@ -64,8 +64,8 @@ playerClassVars = makePlayerClassVars(countrylistS)
 allNoneChecked = makeAllNoneCheck(countrylistS)
 jsCheckboxes = makeJScheckboxes(countrylistS)
 
-baseJS = open('base.js', "rt")
-resultJS = open("../script.js", "wt")
+baseJS = open('base.js', "rt", encoding='utf8')
+resultJS = open("../script.js", "wt", encoding='utf8')
 
 for line in baseJS:
     if '//{{checkox variables}}' in line:
