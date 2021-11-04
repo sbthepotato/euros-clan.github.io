@@ -12,8 +12,6 @@ $(document).ready(function () {
         fr.prop('checked', true);
         var nl = $("input[type='checkbox'][value='nl']");
         nl.prop('checked', true);
-        var be = $("input[type='checkbox'][value='be']");
-        be.prop('checked', true);
         var ch = $("input[type='checkbox'][value='ch']");
         ch.prop('checked', true);
         var hu = $("input[type='checkbox'][value='hu']");
@@ -35,8 +33,6 @@ $(document).ready(function () {
         fr_card.fadeIn();
         var nl_card = $('.nl');
         nl_card.fadeIn();
-        var be_card = $('.be');
-        be_card.fadeIn();
         var ch_card = $('.ch');
         ch_card.fadeIn();
         var hu_card = $('.hu');
@@ -55,7 +51,6 @@ $(document).ready(function () {
                         && de.prop('checked')
                         && fr.prop('checked')
                         && nl.prop('checked')
-                        && be.prop('checked')
                         && ch.prop('checked')
                         && hu.prop('checked')
                         && it.prop('checked')
@@ -69,7 +64,6 @@ $(document).ready(function () {
                         && de.prop('checked') == false
                         && fr.prop('checked') == false
                         && nl.prop('checked') == false
-                        && be.prop('checked') == false
                         && ch.prop('checked') == false
                         && hu.prop('checked') == false
                         && it.prop('checked') == false
@@ -89,8 +83,6 @@ $(document).ready(function () {
                         fr_card.fadeIn();
                         nl.prop('checked', true);
                         nl_card.fadeIn();
-                        be.prop('checked', true);
-                        be_card.fadeIn();
                         ch.prop('checked', true);
                         ch_card.fadeIn();
                         hu.prop('checked', true);
@@ -114,8 +106,6 @@ $(document).ready(function () {
                         fr_card.fadeOut();
                         nl.prop('checked', false);
                         nl_card.fadeOut();
-                        be.prop('checked', false);
-                        be_card.fadeOut();
                         ch.prop('checked', false);
                         ch_card.fadeOut();
                         hu.prop('checked', false);
@@ -169,17 +159,6 @@ $(document).ready(function () {
                 } else {
                         all.prop('checked', false);
                         nl_card.fadeOut();
-                        noneChecked();
-                }
-        });
-        be.on('change', function () {
-                if (be.prop('checked')) {
-                        none.prop('checked', false);
-                        be_card.fadeIn();
-                        allChecked();
-                } else {
-                        all.prop('checked', false);
-                        be_card.fadeOut();
                         noneChecked();
                 }
         });
