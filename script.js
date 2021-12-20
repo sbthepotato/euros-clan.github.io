@@ -8,22 +8,22 @@ $(document).ready(function () {
         gb.prop('checked', true);
         var de = $("input[type='checkbox'][value='de']");
         de.prop('checked', true);
-        var fr = $("input[type='checkbox'][value='fr']");
-        fr.prop('checked', true);
         var nl = $("input[type='checkbox'][value='nl']");
         nl.prop('checked', true);
-        var be = $("input[type='checkbox'][value='be']");
-        be.prop('checked', true);
+        var us = $("input[type='checkbox'][value='us']");
+        us.prop('checked', true);
         var ch = $("input[type='checkbox'][value='ch']");
         ch.prop('checked', true);
+        var fr = $("input[type='checkbox'][value='fr']");
+        fr.prop('checked', true);
         var hu = $("input[type='checkbox'][value='hu']");
         hu.prop('checked', true);
         var it = $("input[type='checkbox'][value='it']");
         it.prop('checked', true);
         var no = $("input[type='checkbox'][value='no']");
         no.prop('checked', true);
-        var us = $("input[type='checkbox'][value='us']");
-        us.prop('checked', true);
+        var se = $("input[type='checkbox'][value='se']");
+        se.prop('checked', true);
 
 
         // player class variables & set all card displays to on
@@ -31,50 +31,50 @@ $(document).ready(function () {
         gb_card.fadeIn();
         var de_card = $('.de');
         de_card.fadeIn();
-        var fr_card = $('.fr');
-        fr_card.fadeIn();
         var nl_card = $('.nl');
         nl_card.fadeIn();
-        var be_card = $('.be');
-        be_card.fadeIn();
+        var us_card = $('.us');
+        us_card.fadeIn();
         var ch_card = $('.ch');
         ch_card.fadeIn();
+        var fr_card = $('.fr');
+        fr_card.fadeIn();
         var hu_card = $('.hu');
         hu_card.fadeIn();
         var it_card = $('.it');
         it_card.fadeIn();
         var no_card = $('.no');
         no_card.fadeIn();
-        var us_card = $('.us');
-        us_card.fadeIn();
+        var se_card = $('.se');
+        se_card.fadeIn();
 
 
         // if everything is checked this will recheck 'all'
         function allChecked() {
                 if (gb.prop('checked')
                         && de.prop('checked')
-                        && fr.prop('checked')
                         && nl.prop('checked')
-                        && be.prop('checked')
+                        && us.prop('checked')
                         && ch.prop('checked')
+                        && fr.prop('checked')
                         && hu.prop('checked')
                         && it.prop('checked')
                         && no.prop('checked')
-                        && us.prop('checked')
+                        && se.prop('checked')
                 ) { all.prop('checked', true); }
         }
         // if everything is unchecked this will recheck 'none'
         function noneChecked() {
                 if (gb.prop('checked') == false
                         && de.prop('checked') == false
-                        && fr.prop('checked') == false
                         && nl.prop('checked') == false
-                        && be.prop('checked') == false
+                        && us.prop('checked') == false
                         && ch.prop('checked') == false
+                        && fr.prop('checked') == false
                         && hu.prop('checked') == false
                         && it.prop('checked') == false
                         && no.prop('checked') == false
-                        && us.prop('checked') == false
+                        && se.prop('checked') == false
                 ) { none.prop('checked', true); }
         }
 
@@ -85,22 +85,22 @@ $(document).ready(function () {
                         gb_card.fadeIn();
                         de.prop('checked', true);
                         de_card.fadeIn();
-                        fr.prop('checked', true);
-                        fr_card.fadeIn();
                         nl.prop('checked', true);
                         nl_card.fadeIn();
-                        be.prop('checked', true);
-                        be_card.fadeIn();
+                        us.prop('checked', true);
+                        us_card.fadeIn();
                         ch.prop('checked', true);
                         ch_card.fadeIn();
+                        fr.prop('checked', true);
+                        fr_card.fadeIn();
                         hu.prop('checked', true);
                         hu_card.fadeIn();
                         it.prop('checked', true);
                         it_card.fadeIn();
                         no.prop('checked', true);
                         no_card.fadeIn();
-                        us.prop('checked', true);
-                        us_card.fadeIn();
+                        se.prop('checked', true);
+                        se_card.fadeIn();
                 }
         });
         none.on('change', function () {
@@ -110,22 +110,22 @@ $(document).ready(function () {
                         gb_card.fadeOut();
                         de.prop('checked', false);
                         de_card.fadeOut();
-                        fr.prop('checked', false);
-                        fr_card.fadeOut();
                         nl.prop('checked', false);
                         nl_card.fadeOut();
-                        be.prop('checked', false);
-                        be_card.fadeOut();
+                        us.prop('checked', false);
+                        us_card.fadeOut();
                         ch.prop('checked', false);
                         ch_card.fadeOut();
+                        fr.prop('checked', false);
+                        fr_card.fadeOut();
                         hu.prop('checked', false);
                         hu_card.fadeOut();
                         it.prop('checked', false);
                         it_card.fadeOut();
                         no.prop('checked', false);
                         no_card.fadeOut();
-                        us.prop('checked', false);
-                        us_card.fadeOut();
+                        se.prop('checked', false);
+                        se_card.fadeOut();
                 }
         });
         gb.on('change', function () {
@@ -150,17 +150,6 @@ $(document).ready(function () {
                         noneChecked();
                 }
         });
-        fr.on('change', function () {
-                if (fr.prop('checked')) {
-                        none.prop('checked', false);
-                        fr_card.fadeIn();
-                        allChecked();
-                } else {
-                        all.prop('checked', false);
-                        fr_card.fadeOut();
-                        noneChecked();
-                }
-        });
         nl.on('change', function () {
                 if (nl.prop('checked')) {
                         none.prop('checked', false);
@@ -172,14 +161,14 @@ $(document).ready(function () {
                         noneChecked();
                 }
         });
-        be.on('change', function () {
-                if (be.prop('checked')) {
+        us.on('change', function () {
+                if (us.prop('checked')) {
                         none.prop('checked', false);
-                        be_card.fadeIn();
+                        us_card.fadeIn();
                         allChecked();
                 } else {
                         all.prop('checked', false);
-                        be_card.fadeOut();
+                        us_card.fadeOut();
                         noneChecked();
                 }
         });
@@ -191,6 +180,17 @@ $(document).ready(function () {
                 } else {
                         all.prop('checked', false);
                         ch_card.fadeOut();
+                        noneChecked();
+                }
+        });
+        fr.on('change', function () {
+                if (fr.prop('checked')) {
+                        none.prop('checked', false);
+                        fr_card.fadeIn();
+                        allChecked();
+                } else {
+                        all.prop('checked', false);
+                        fr_card.fadeOut();
                         noneChecked();
                 }
         });
@@ -227,14 +227,14 @@ $(document).ready(function () {
                         noneChecked();
                 }
         });
-        us.on('change', function () {
-                if (us.prop('checked')) {
+        se.on('change', function () {
+                if (se.prop('checked')) {
                         none.prop('checked', false);
-                        us_card.fadeIn();
+                        se_card.fadeIn();
                         allChecked();
                 } else {
                         all.prop('checked', false);
-                        us_card.fadeOut();
+                        se_card.fadeOut();
                         noneChecked();
                 }
         });
