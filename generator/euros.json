@@ -142,17 +142,6 @@
             "steam": "id/yxuxnoxgoodxxd"
         }
     ],
-    "nexalty": [
-        {
-            "name": "Nexalty",
-            "rank": "member",
-            "country": "fr",
-            "twitch": "nexalty",
-            "youtube": "channel/UCBJG08mjjFAzHSC9NNiQFcw",
-            "twitter": "Nexa_lty",
-            "steam": "id/Nexalty"
-        }
-    ],
     "corten": [
         {
             "name": "Corten",
@@ -206,6 +195,28 @@
             "youtube": "",
             "twitter": "Slayerr_gb",
             "steam": "profiles/76561199030633962"
+        }
+    ],
+    "yennj": [
+        {
+            "name": "Yennj",
+            "rank": "member",
+            "country": "se",
+            "twitch": "",
+            "youtube": "",
+            "twitter": "Yennjjj",
+            "steam": "profiles/76561198427479564"
+        }
+    ],
+    "rhexos": [
+        {
+            "name": "rhexos",
+            "rank": "member",
+            "country": "us",
+            "twitch": "",
+            "youtube": "",
+            "twitter": "",
+            "steam": "id/rhexos"
         }
     ]
 }
