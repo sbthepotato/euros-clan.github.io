@@ -218,5 +218,16 @@
             "twitter": "",
             "steam": "id/rhexos"
         }
+    ],
+    "twicemas": [
+        {
+            "name": "Twicemas",
+            "rank": "member",
+            "country": "se",
+            "twitch": "twicemas",
+            "youtube": "c/Twicemas",
+            "twitter": "Twicemas",
+            "steam": "id/Twicemas/"
+        }
     ]
 }
