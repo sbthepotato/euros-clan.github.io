@@ -1,8 +1,7 @@
 import json
-import shutil
 from collections import Counter
 
-from generator_functions import *
+from functions_generator import *
 
 # open json file
 eurosjson = open('euros.json',encoding='utf8')
@@ -15,7 +14,7 @@ eurosjson.close()
 # sort dict alphabetically
 sortedRoster = sorted(eurosDict.items())
 
-# define function results for later use
+# define function return values
 roster = ""
 filterbox = ""
 countrylist = []

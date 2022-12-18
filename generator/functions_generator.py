@@ -4,8 +4,10 @@ import random
 
 
 def find(pattern, path):
+    """Finds files with a matching name in a directory
+    """
     result = []
-    for root, dirs, files in os.walk(path):
+    for _, _, files in os.walk(path):
         for name in files:
             if fnmatch.fnmatch(name, pattern):
                 result.append(name)
@@ -17,19 +19,24 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
     needs to be given all the info on the player
     """
 
+    # find the guardian pictures and shuffle them
     chars = find(name.lower()+"*.jpg", '../images/roster/')
     random.shuffle(chars)
 
     print(name, rank, country, twitch, youtube,
           twitter, steam, chars, "\n")
 
+    # create the roster card
     rosterCard = "<article class=\""+rank+" "+country+" col\">\n"
+    # if no characters found choose a random from the template
     if len(chars) == 0:
         rand = random.choice('wth')
         rosterCard += "<img class=\"player-bg\" src=\"images/roster/0placeholder_"+rand+".jpg\">\n"
+    # if one character is found create a simple image
     elif len(chars) == 1:
         rosterCard += "<img class=\"player-bg\" src=\"images/roster/" + \
             chars[0]+"\">\n"
+    # if 2+ are found then create the carousel
     else:
         rosterCard += "<div id=\""+name.lower()+"-carousel\" class=\"carousel slide player-bg\" data-ride=\"carousel\"\
         data-interval=\"12000\">\n\
@@ -40,6 +47,7 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
         <div class=\"carousel-item\">\n\
         <img src=\"images/roster/"+chars[1]+"\">\n\
         </div>\n"
+        # if 3 are found then add the 3rd image to the carousel
         if len(chars) == 3:
             rosterCard += "<div class=\"carousel-item\">\n\
             <img src=\"images/roster/"+chars[2]+"\">\n\
@@ -58,6 +66,7 @@ def makePlayerCard(name, rank, country, twitch, youtube, twitter, steam):
     <img class=\"flag icon\" src=\"images/flags/"+country+".svg\">\n\
     </h3>\n\
     <ul>\n"
+    # create each social link if they exist
     if twitch:
         rosterCard += "<li>\n\
         <a target=\"_blank\" href=\"https://www.twitch.tv/"+twitch+"\">\n\
@@ -107,6 +116,8 @@ def makeHTMLcheckboxes(countries, countriesFull):
 
 
 def makeCheckboxVars(countries):
+    """Creates the JS variables used for the checkboxes
+    """
     checkboxVars = ""
     if len(countries) >= 3:
         checkboxVars += "var all = $(\"input[type='checkbox'][value='all']\");\n\
@@ -120,6 +131,8 @@ def makeCheckboxVars(countries):
 
 
 def makePlayerClassVars(countries):
+    """Creates JS variables for player card class and sets their default visibility state
+    """
     playerClassVars = ""
     for country in countries:
         playerClassVars += "var "+country+"_card = $('."+country+"');\n"\
@@ -128,6 +141,8 @@ def makePlayerClassVars(countries):
 
 
 def makeAllNoneCheck(countries):
+    """Creates the JS to check and uncheck all countries at once
+    """
     allNoneCheck = ""
     if len(countries) >= 3:
         allNoneCheck += "// if everything is checked this will recheck 'all'\n\
@@ -151,6 +166,8 @@ def makeAllNoneCheck(countries):
 
 
 def makeJScheckboxes(countries):
+    """Creates the JS to check or uncheck specific countries
+    """
     jsCheckboxes = ""
     if len(countries) >= 3:
         jsCheckboxes += "all.on('change', function () {\n\
